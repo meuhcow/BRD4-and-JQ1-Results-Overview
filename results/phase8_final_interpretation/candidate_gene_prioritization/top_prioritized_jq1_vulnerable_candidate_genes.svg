@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="742" viewBox="0 0 1180 742">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="700">Prioritized JQ1-Vulnerable Candidate Genes</text>
+<text x="24" y="54" font-family="Arial, sans-serif" font-size="12" fill="#555">Composite score from recurrence, sharing, annotation context, gene evidence, and IGV shortlist status.</text>
+<text x="182" y="89" font-family="Arial, sans-serif" font-size="11" text-anchor="end">1. E2F3</text>
+<rect x="190" y="77" width="930.0" height="16" fill="#4f7f9f"><title>E2F3: score 87.1; 14 cancer types; 25 samples</title></rect>
+<text x="1127.0" y="89" font-family="Arial, sans-serif" font-size="11" fill="#333">87.1</text>
+<text x="182" y="114" font-family="Arial, sans-serif" font-size="11" text-anchor="end">2. TARBP1</text>
+<rect x="190" y="102" width="923.1" height="16" fill="#4f7f9f"><title>TARBP1: score 86.5; 12 cancer types; 35 samples</title></rect>
+<text x="1120.1" y="114" font-family="Arial, sans-serif" font-size="11" fill="#333">86.5</text>
+<text x="182" y="139" font-family="Arial, sans-serif" font-size="11" text-anchor="end">3. FBXL5</text>
+<rect x="190" y="127" width="874.7" height="16" fill="#4f7f9f"><title>FBXL5: score 82.0; 13 cancer types; 32 samples</title></rect>
+<text x="1071.7" y="139" font-family="Arial, sans-serif" font-size="11" fill="#333">82.0</text>
+<text x="182" y="164" font-family="Arial, sans-serif" font-size="11" text-anchor="end">4. PAIP1</text>
+<rect x="190" y="152" width="862.5" height="16" fill="#4f7f9f"><title>PAIP1: score 80.8; 14 cancer types; 24 samples</title></rect>
+<text x="1059.5" y="164" font-family="Arial, sans-serif" font-size="11" fill="#333">80.8</text>
+<text x="182" y="189" font-family="Arial, sans-serif" font-size="11" text-anchor="end">5. UBE2R2</text>
+<rect x="190" y="177" width="840.2" height="16" fill="#4f7f9f"><title>UBE2R2: score 78.7; 12 cancer types; 27 samples</title></rect>
+<text x="1037.2" y="189" font-family="Arial, sans-serif" font-size="11" fill="#333">78.7</text>
+<text x="182" y="214" font-family="Arial, sans-serif" font-size="11" text-anchor="end">6. IQGAP1</text>
+<rect x="190" y="202" width="819.3" height="16" fill="#4f7f9f"><title>IQGAP1: score 76.8; 12 cancer types; 25 samples</title></rect>
+<text x="1016.3" y="214" font-family="Arial, sans-serif" font-size="11" fill="#333">76.8</text>
+<text x="182" y="239" font-family="Arial, sans-serif" font-size="11" text-anchor="end">7. ZBTB7B</text>
+<rect x="190" y="227" width="813.4" height="16" fill="#4f7f9f"><title>ZBTB7B: score 76.2; 12 cancer types; 28 samples</title></rect>
+<text x="1010.4" y="239" font-family="Arial, sans-serif" font-size="11" fill="#333">76.2</text>
+<text x="182" y="264" font-family="Arial, sans-serif" font-size="11" text-anchor="end">8. WEE1</text>
+<rect x="190" y="252" width="795.0" height="16" fill="#4f7f9f"><title>WEE1: score 74.5; 12 cancer types; 25 samples</title></rect>
+<text x="992.0" y="264" font-family="Arial, sans-serif" font-size="11" fill="#333">74.5</text>
+<text x="182" y="289" font-family="Arial, sans-serif" font-size="11" text-anchor="end">9. VEGFA</text>
+<rect x="190" y="277" width="762.1" height="16" fill="#4f7f9f"><title>VEGFA: score 71.4; 12 cancer types; 25 samples</title></rect>
+<text x="959.1" y="289" font-family="Arial, sans-serif" font-size="11" fill="#333">71.4</text>
+<text x="182" y="314" font-family="Arial, sans-serif" font-size="11" text-anchor="end">10. CA10</text>
+<rect x="190" y="302" width="748.2" height="16" fill="#4f7f9f"><title>CA10: score 70.1; 13 cancer types; 27 samples</title></rect>
+<text x="945.2" y="314" font-family="Arial, sans-serif" font-size="11" fill="#333">70.1</text>
+<text x="182" y="339" font-family="Arial, sans-serif" font-size="11" text-anchor="end">11. KAT5</text>
+<rect x="190" y="327" width="743.5" height="16" fill="#4f7f9f"><title>KAT5: score 69.7; 12 cancer types; 27 samples</title></rect>
+<text x="940.5" y="339" font-family="Arial, sans-serif" font-size="11" fill="#333">69.7</text>
+<text x="182" y="364" font-family="Arial, sans-serif" font-size="11" text-anchor="end">12. SRPK2</text>
+<rect x="190" y="352" width="743.0" height="16" fill="#4f7f9f"><title>SRPK2: score 69.6; 13 cancer types; 18 samples</title></rect>
+<text x="940.0" y="364" font-family="Arial, sans-serif" font-size="11" fill="#333">69.6</text>
+<text x="182" y="389" font-family="Arial, sans-serif" font-size="11" text-anchor="end">13. NINJ2</text>
+<rect x="190" y="377" width="701.5" height="16" fill="#4f7f9f"><title>NINJ2: score 65.7; 12 cancer types; 24 samples</title></rect>
+<text x="898.5" y="389" font-family="Arial, sans-serif" font-size="11" fill="#333">65.7</text>
+<text x="182" y="414" font-family="Arial, sans-serif" font-size="11" text-anchor="end">14. PRF1</text>
+<rect x="190" y="402" width="690.5" height="16" fill="#4f7f9f"><title>PRF1: score 64.7; 12 cancer types; 28 samples</title></rect>
+<text x="887.5" y="414" font-family="Arial, sans-serif" font-size="11" fill="#333">64.7</text>
+<text x="182" y="439" font-family="Arial, sans-serif" font-size="11" text-anchor="end">15. ANAPC5</text>
+<rect x="190" y="427" width="689.9" height="16" fill="#4f7f9f"><title>ANAPC5: score 64.6; 11 cancer types; 32 samples</title></rect>
+<text x="886.9" y="439" font-family="Arial, sans-serif" font-size="11" fill="#333">64.6</text>
+<text x="182" y="464" font-family="Arial, sans-serif" font-size="11" text-anchor="end">16. TMEM80</text>
+<rect x="190" y="452" width="686.1" height="16" fill="#4f7f9f"><title>TMEM80: score 64.3; 11 cancer types; 28 samples</title></rect>
+<text x="883.1" y="464" font-family="Arial, sans-serif" font-size="11" fill="#333">64.3</text>
+<text x="182" y="489" font-family="Arial, sans-serif" font-size="11" text-anchor="end">17. SRPK2</text>
+<rect x="190" y="477" width="672.2" height="16" fill="#4f7f9f"><title>SRPK2: score 63.0; 12 cancer types; 20 samples</title></rect>
+<text x="869.2" y="489" font-family="Arial, sans-serif" font-size="11" fill="#333">63.0</text>
+<text x="182" y="514" font-family="Arial, sans-serif" font-size="11" text-anchor="end">18. EPS8L3</text>
+<rect x="190" y="502" width="665.4" height="16" fill="#4f7f9f"><title>EPS8L3: score 62.3; 11 cancer types; 30 samples</title></rect>
+<text x="862.4" y="514" font-family="Arial, sans-serif" font-size="11" fill="#333">62.3</text>
+<text x="182" y="539" font-family="Arial, sans-serif" font-size="11" text-anchor="end">19. GGTA1</text>
+<rect x="190" y="527" width="651.8" height="16" fill="#4f7f9f"><title>GGTA1: score 61.1; 11 cancer types; 25 samples</title></rect>
+<text x="848.8" y="539" font-family="Arial, sans-serif" font-size="11" fill="#333">61.1</text>
+<text x="182" y="564" font-family="Arial, sans-serif" font-size="11" text-anchor="end">20. GOLPH3</text>
+<rect x="190" y="552" width="650.5" height="16" fill="#4f7f9f"><title>GOLPH3: score 60.9; 12 cancer types; 23 samples</title></rect>
+<text x="847.5" y="564" font-family="Arial, sans-serif" font-size="11" fill="#333">60.9</text>
+<text x="182" y="589" font-family="Arial, sans-serif" font-size="11" text-anchor="end">21. HEPACAM2</text>
+<rect x="190" y="577" width="649.2" height="16" fill="#4f7f9f"><title>HEPACAM2: score 60.8; 12 cancer types; 24 samples</title></rect>
+<text x="846.2" y="589" font-family="Arial, sans-serif" font-size="11" fill="#333">60.8</text>
+<text x="182" y="614" font-family="Arial, sans-serif" font-size="11" text-anchor="end">22. SCAF11</text>
+<rect x="190" y="602" width="649.1" height="16" fill="#4f7f9f"><title>SCAF11: score 60.8; 12 cancer types; 25 samples</title></rect>
+<text x="846.1" y="614" font-family="Arial, sans-serif" font-size="11" fill="#333">60.8</text>
+<text x="182" y="639" font-family="Arial, sans-serif" font-size="11" text-anchor="end">23. MEF2D</text>
+<rect x="190" y="627" width="648.4" height="16" fill="#4f7f9f"><title>MEF2D: score 60.8; 11 cancer types; 28 samples</title></rect>
+<text x="845.4" y="639" font-family="Arial, sans-serif" font-size="11" fill="#333">60.8</text>
+<text x="182" y="664" font-family="Arial, sans-serif" font-size="11" text-anchor="end">24. MYL12B</text>
+<rect x="190" y="652" width="647.7" height="16" fill="#4f7f9f"><title>MYL12B: score 60.7; 11 cancer types; 26 samples</title></rect>
+<text x="844.7" y="664" font-family="Arial, sans-serif" font-size="11" fill="#333">60.7</text>
+<text x="182" y="689" font-family="Arial, sans-serif" font-size="11" text-anchor="end">25. PRRC1</text>
+<rect x="190" y="677" width="647.5" height="16" fill="#4f7f9f"><title>PRRC1: score 60.7; 12 cancer types; 25 samples</title></rect>
+<text x="844.5" y="689" font-family="Arial, sans-serif" font-size="11" fill="#333">60.7</text>
+</svg>

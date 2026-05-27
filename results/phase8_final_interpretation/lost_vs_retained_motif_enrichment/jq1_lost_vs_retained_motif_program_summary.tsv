@@ -1,0 +1,5 @@
+program	motif_count	mean_lost_minus_retained_percent_points	max_lost_minus_retained_percent_points	mean_lost_to_retained_ratio	mean_score_neg_log10_p	top_delta_motif	top_delta_motif_delta_percent_points
+ER/AR/Nuclear receptor	7	7.99	9.57	1.219	52.0	THRb(NR)/Liver-NR1A2-ChIP-Seq(GSE52613)/Homer	9.57
+Other	5	7.65	8.2	1.219	47.6	Tbx5(T-box)/HL1-Tbx5.biotin-ChIP-Seq(GSE21529)/Homer	8.2
+Homeobox	10	7.64	8.18	1.164	44.9	Nkx2.1(Homeobox)/LungAC-Nkx2.1-ChIP-Seq(GSE43252)/Homer	8.18
+MYC/MAX/bHLH	3	7.52	8.25	1.164	43.0	SCL(bHLH)/HPC7-Scl-ChIP-Seq(GSE13511)/Homer	8.25

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="470" viewBox="0 0 1050 470">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="700">Motif Program Contrast: Sensitive vs Resistant</text>
+<text x="24" y="54" font-family="Arial, sans-serif" font-size="12" fill="#555">Positive values indicate stronger motif-program enrichment in high-sensitivity cancer types.</text>
+<line x1="480.0" y1="62" x2="480.0" y2="444" stroke="#999"/>
+<text x="468.0" y="92" font-family="Arial, sans-serif" font-size="12" text-anchor="end">ER/AR/Nuclear receptor</text>
+<rect x="480.0" y="77" width="360.0" height="20" fill="#b3453d"><title>ER/AR/Nuclear receptor: high-low 81.50</title></rect>
+<text x="846.0" y="92" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">81.5</text>
+<text x="468.0" y="126" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Homeobox</text>
+<rect x="480.0" y="111" width="360.0" height="20" fill="#b3453d"><title>Homeobox: high-low 81.50</title></rect>
+<text x="846.0" y="126" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">81.5</text>
+<text x="468.0" y="160" font-family="Arial, sans-serif" font-size="12" text-anchor="end">MYC/MAX/bHLH</text>
+<rect x="480.0" y="145" width="316.6" height="20" fill="#b3453d"><title>MYC/MAX/bHLH: high-low 71.67</title></rect>
+<text x="802.6" y="160" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">71.7</text>
+<text x="468.0" y="194" font-family="Arial, sans-serif" font-size="12" text-anchor="end">ETS</text>
+<rect x="480.0" y="179" width="288.6" height="20" fill="#b3453d"><title>ETS: high-low 65.33</title></rect>
+<text x="774.6" y="194" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">65.3</text>
+<text x="468.0" y="228" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Other</text>
+<rect x="480.0" y="213" width="284.9" height="20" fill="#b3453d"><title>Other: high-low 64.50</title></rect>
+<text x="770.9" y="228" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">64.5</text>
+<text x="468.0" y="262" font-family="Arial, sans-serif" font-size="12" text-anchor="end">STAT/IRF/immune</text>
+<rect x="480.0" y="247" width="185.5" height="20" fill="#b3453d"><title>STAT/IRF/immune: high-low 42.00</title></rect>
+<text x="671.5" y="262" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">42.0</text>
+<text x="468.0" y="296" font-family="Arial, sans-serif" font-size="12" text-anchor="end">NF-kB/REL</text>
+<rect x="480.0" y="281" width="143.6" height="20" fill="#b3453d"><title>NF-kB/REL: high-low 32.50</title></rect>
+<text x="629.6" y="296" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">32.5</text>
+<text x="468.0" y="330" font-family="Arial, sans-serif" font-size="12" text-anchor="end">FOX</text>
+<rect x="480.0" y="315" width="132.5" height="20" fill="#b3453d"><title>FOX: high-low 30.00</title></rect>
+<text x="618.5" y="330" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">30.0</text>
+<text x="468.0" y="364" font-family="Arial, sans-serif" font-size="12" text-anchor="end">RUNX</text>
+<rect x="480.0" y="349" width="119.3" height="20" fill="#b3453d"><title>RUNX: high-low 27.00</title></rect>
+<text x="605.3" y="364" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">27.0</text>
+<text x="468.0" y="398" font-family="Arial, sans-serif" font-size="12" text-anchor="end">AP-1/JUN/FOS</text>
+<rect x="480.0" y="383" width="97.2" height="20" fill="#b3453d"><title>AP-1/JUN/FOS: high-low 22.00</title></rect>
+<text x="583.2" y="398" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">22.0</text>
+<text x="468.0" y="432" font-family="Arial, sans-serif" font-size="12" text-anchor="end">GATA</text>
+<rect x="480.0" y="417" width="70.7" height="20" fill="#b3453d"><title>GATA: high-low 16.00</title></rect>
+<text x="556.7" y="432" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">16.0</text>
+<text x="120" y="466" font-family="Arial, sans-serif" font-size="12" fill="#555">High sensitivity: mean JQ1 loss &gt;=80%; low sensitivity: mean JQ1 loss &lt;50%.</text>
+</svg>

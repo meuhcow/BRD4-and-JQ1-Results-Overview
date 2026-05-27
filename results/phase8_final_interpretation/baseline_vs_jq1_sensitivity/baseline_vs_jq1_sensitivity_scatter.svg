@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="34" font-family="Arial, sans-serif" font-size="20" font-weight="700">Baseline BRD4 Burden vs JQ1 Sensitivity</text>
+<text x="24" y="56" font-family="Arial, sans-serif" font-size="12" fill="#555">Each point is one matched Ctrl/JQ1 pair. X-axis uses log10 untreated Ctrl peak count.</text>
+<rect x="95" y="75" width="775" height="605" fill="#fbfbfb" stroke="#ddd"/>
+<line x1="95" y1="680.0" x2="870" y2="680.0" stroke="#e5e5e5"/>
+<text x="85" y="684.0" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">0%</text>
+<line x1="95" y1="564.8" x2="870" y2="564.8" stroke="#e5e5e5"/>
+<text x="85" y="568.8" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">20%</text>
+<line x1="95" y1="449.5" x2="870" y2="449.5" stroke="#e5e5e5"/>
+<text x="85" y="453.5" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">40%</text>
+<line x1="95" y1="334.3" x2="870" y2="334.3" stroke="#e5e5e5"/>
+<text x="85" y="338.3" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">60%</text>
+<line x1="95" y1="219.0" x2="870" y2="219.0" stroke="#e5e5e5"/>
+<text x="85" y="223.0" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">80%</text>
+<line x1="95" y1="103.8" x2="870" y2="103.8" stroke="#e5e5e5"/>
+<text x="85" y="107.8" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">100%</text>
+<line x1="95.0" y1="75" x2="95.0" y2="680" stroke="#eeeeee"/>
+<text x="95.0" y="702" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#555">3.4</text>
+<line x1="337.2" y1="75" x2="337.2" y2="680" stroke="#eeeeee"/>
+<text x="337.2" y="702" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#555">3.9</text>
+<line x1="579.4" y1="75" x2="579.4" y2="680" stroke="#eeeeee"/>
+<text x="579.4" y="702" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#555">4.4</text>
+<line x1="821.6" y1="75" x2="821.6" y2="680" stroke="#eeeeee"/>
+<text x="821.6" y="702" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#555">4.9</text>
+<line x1="531.3" y1="75" x2="531.3" y2="680" stroke="#999" stroke-dasharray="4 4"/>
+<line x1="95" y1="278.8" x2="870" y2="278.8" stroke="#999" stroke-dasharray="4 4"/>
+<line x1="95.0" y1="165.6" x2="870.0" y2="348.6" stroke="#333" stroke-width="2"/>
+<circle cx="254.2" cy="103.8" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>SUM159 rep1 / Breast cancer: Ctrl peaks 5354, 100.00% lost</title></circle>
+<circle cx="277.9" cy="104.4" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>U87 rep1 / Glioblastoma multiome: Ctrl peaks 5991, 99.90% lost</title></circle>
+<circle cx="167.0" cy="106.4" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>U87 rep2 / Glioblastoma multiome: Ctrl peaks 3537, 99.55% lost</title></circle>
+<circle cx="234.2" cy="110.9" r="5" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>GIST-T1 rep1 / Gastrointestinal stromal tumor: Ctrl peaks 4869, 98.77% lost</title></circle>
+<circle cx="393.9" cy="113.3" r="5" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>KK1 rep1 / Adult T-cell Leukemia/Lymphoma (ATLL): Ctrl peaks 10400, 98.36% lost</title></circle>
+<circle cx="478.0" cy="119.9" r="5" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>OVCAR3 rep1 / Ovarian cancer: Ctrl peaks 15517, 97.21% lost</title></circle>
+<circle cx="262.7" cy="126.1" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MDA-MB-231 rep1 / Breast cancer: Ctrl peaks 5575, 96.14% lost</title></circle>
+<circle cx="552.2" cy="129.6" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MutuI rep1 / Burkitt's lymphoma: Ctrl peaks 22072, 95.52% lost</title></circle>
+<circle cx="531.3" cy="156.4" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>OCI-AML3 rep1 / Acute myeloid leukemia: Ctrl peaks 19989, 90.88% lost</title></circle>
+<circle cx="527.9" cy="177.3" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>OS-RC-2 rep1 / Clear cell renal cell carcinoma: Ctrl peaks 19668, 87.25% lost</title></circle>
+<circle cx="472.7" cy="187.2" r="5" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>HCT116 rep1 / Colon cancer: Ctrl peaks 15126, 85.53% lost</title></circle>
+<circle cx="612.3" cy="193.3" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>Raji rep1 / Burkitt's lymphoma: Ctrl peaks 29371, 84.46% lost</title></circle>
+<circle cx="358.6" cy="199.8" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>LP-1 rep1 / Multiple myeloma: Ctrl peaks 8794, 83.34% lost</title></circle>
+<circle cx="632.0" cy="203.3" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MCF7 rep1 / Breast cancer: Ctrl peaks 32263, 82.73% lost</title></circle>
+<circle cx="640.9" cy="204.1" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>OS-RC-2 rep2 / Clear cell renal cell carcinoma: Ctrl peaks 33657, 82.59% lost</title></circle>
+<circle cx="685.5" cy="207.5" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MutuI rep2 / Burkitt's lymphoma: Ctrl peaks 41591, 82.01% lost</title></circle>
+<circle cx="368.0" cy="210.0" r="6" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>PC3 rep2 / Prostate cancer: Ctrl peaks 9199, 81.57% lost</title></circle>
+<circle cx="862.1" cy="245.3" r="5" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>SK-N-BE2-C rep1 / Neuroblastoma: Ctrl peaks 96287, 75.44% lost</title></circle>
+<circle cx="571.6" cy="246.5" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>COLO320-DM rep1 / Colorectal cancer: Ctrl peaks 24207, 75.24% lost</title></circle>
+<circle cx="667.5" cy="257.5" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>T47D rep1 / Breast cancer: Ctrl peaks 38190, 73.33% lost</title></circle>
+<circle cx="495.4" cy="270.1" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>COLO320-HSR rep2 / Colorectal cancer: Ctrl peaks 16853, 71.14% lost</title></circle>
+<circle cx="767.0" cy="278.8" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>ST1412 rep1 / Rheumatoid arthritis: Ctrl peaks 61281, 69.63% lost</title></circle>
+<circle cx="770.8" cy="282.4" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>SUM1315 rep1 / Breast cancer: Ctrl peaks 62415, 69.00% lost</title></circle>
+<circle cx="473.8" cy="289.1" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>GSC316 rep1 / Glioblastoma multiome: Ctrl peaks 15210, 67.84% lost</title></circle>
+<circle cx="795.7" cy="296.9" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>BT549 rep1 / Breast cancer: Ctrl peaks 70264, 66.48% lost</title></circle>
+<circle cx="181.1" cy="297.9" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>PC3 rep1 / Prostate cancer: Ctrl peaks 3782, 66.31% lost</title></circle>
+<circle cx="98.3" cy="301.4" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MDA-MB-231 rep2 / Breast cancer: Ctrl peaks 2552, 65.71% lost</title></circle>
+<circle cx="408.1" cy="319.1" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>GSC316 rep2 / Glioblastoma multiome: Ctrl peaks 11126, 62.63% lost</title></circle>
+<circle cx="157.5" cy="323.0" r="5" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>NB4 rep1 / Acute promyelocytic leukemia: Ctrl peaks 3381, 61.96% lost</title></circle>
+<circle cx="794.1" cy="330.0" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>BT549 rep3 / Breast cancer: Ctrl peaks 69696, 60.74% lost</title></circle>
+<circle cx="527.7" cy="330.4" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>COLO320-DM rep2 / Colorectal cancer: Ctrl peaks 19645, 60.68% lost</title></circle>
+<circle cx="810.5" cy="338.1" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>HCC1395 rep1 / Breast cancer: Ctrl peaks 75347, 59.34% lost</title></circle>
+<circle cx="641.6" cy="340.9" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>SUM185 rep1 / Breast cancer: Ctrl peaks 33759, 58.86% lost</title></circle>
+<circle cx="812.3" cy="345.2" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>BT549 rep2 / Breast cancer: Ctrl peaks 76012, 58.11% lost</title></circle>
+<circle cx="493.0" cy="346.9" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>OPM2 rep1 / Multiple myeloma: Ctrl peaks 16659, 57.81% lost</title></circle>
+<circle cx="474.1" cy="363.7" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>COLO320-HSR rep1 / Colorectal cancer: Ctrl peaks 15231, 54.89% lost</title></circle>
+<circle cx="810.5" cy="365.9" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MDA436 rep1 / Breast cancer: Ctrl peaks 75369, 54.51% lost</title></circle>
+<circle cx="640.9" cy="370.9" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MOLM-13 rep1 / Acute myeloid leukemia: Ctrl peaks 33657, 53.65% lost</title></circle>
+<circle cx="723.6" cy="373.1" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>ST1387 rep1 / Rheumatoid arthritis: Ctrl peaks 49856, 53.26% lost</title></circle>
+<circle cx="501.1" cy="391.1" r="6" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>HCC1806 rep1 / Breast cancer: Ctrl peaks 17315, 50.14% lost</title></circle>
+<circle cx="688.8" cy="431.9" r="6" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>SUM149 rep1 / Breast cancer: Ctrl peaks 42271, 43.06% lost</title></circle>
+<circle cx="812.4" cy="519.9" r="5" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>ASPS-KY rep1 / Alveolar soft part sarcoma: Ctrl peaks 76030, 27.79% lost</title></circle>
+<circle cx="574.5" cy="680.0" r="5" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MOLT4 rep1 / T-ALL: Ctrl peaks 24548, 0.00% lost</title></circle>
+<text x="820.4" y="511.9" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">ASPS-KY</text>
+<text x="582.5" y="672.0" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">MOLT4</text>
+<text x="696.8" y="423.9" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">SUM149</text>
+<text x="226.2" y="128.9" font-family="Arial, sans-serif" font-size="10" text-anchor="end" fill="#333">GIST-T1</text>
+<text x="479.7" y="180.2" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">HCT116</text>
+<text x="401.9" y="101.3" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">KK1</text>
+<text x="365.6" y="192.8" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">LP-1</text>
+<text x="270.7" y="144.1" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">MDA-MB-231</text>
+<text x="534.9" y="170.3" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">OS-RC-2</text>
+<text x="486.0" y="107.9" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">OVCAR3</text>
+<text x="375.0" y="203.0" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">PC3</text>
+<text x="246.2" y="91.8" font-family="Arial, sans-serif" font-size="10" text-anchor="end" fill="#333">SUM159</text>
+<text x="482.5" y="736" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">log10 untreated Ctrl BRD4 peak count</text>
+<text x="24" y="377.5" font-family="Arial, sans-serif" font-size="13" transform="rotate(-90 24 377.5)" text-anchor="middle">JQ1 percent lost vs Ctrl peaks</text>
+<text x="898" y="81" font-family="Arial, sans-serif" font-size="13" font-weight="700">Summary</text>
+<text x="898" y="105" font-family="Arial, sans-serif" font-size="12" fill="#333">n = 43 matched pairs</text>
+<text x="898" y="125" font-family="Arial, sans-serif" font-size="12" fill="#333">Pearson r = -0.41</text>
+<text x="898" y="145" font-family="Arial, sans-serif" font-size="12" fill="#333">Spearman rho = -0.46</text>
+<text x="898" y="165" font-family="Arial, sans-serif" font-size="12" fill="#333">Cancer-level Pearson r = -0.34</text>
+<circle cx="904" cy="205" r="6" fill="#b3453d"/>
+<text x="918" y="209" font-family="Arial, sans-serif" font-size="12" fill="#333">&gt;=80% lost</text>
+<circle cx="904" cy="229" r="6" fill="#bf7a18"/>
+<text x="918" y="233" font-family="Arial, sans-serif" font-size="12" fill="#333">50-79% lost</text>
+<circle cx="904" cy="253" r="6" fill="#287c71"/>
+<text x="918" y="257" font-family="Arial, sans-serif" font-size="12" fill="#333">&lt;50% lost</text>
+<text x="898" y="300" font-family="Arial, sans-serif" font-size="12" fill="#555">Dashed lines mark pair-level medians.</text>
+</svg>

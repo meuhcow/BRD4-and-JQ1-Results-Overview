@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="410" viewBox="0 0 1100 410">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="700">Motifs Enriched In JQ1-Lost Versus Retained BRD4 Regions</text>
+<text x="24" y="54" font-family="Arial, sans-serif" font-size="12" fill="#555">Positive values show higher motif occurrence in JQ1-lost foreground than the BRD4 background/retained comparison set.</text>
+<text x="290" y="95" font-family="Arial, sans-serif" font-size="11" text-anchor="end">ER/AR/Nuclear receptor</text>
+<rect x="300" y="81" width="620.0" height="18" fill="#b3453d"><title>ER/AR/Nuclear receptor: mean lost-retained 7.99 percentage points</title></rect>
+<text x="927.0" y="95" font-family="Arial, sans-serif" font-size="11" fill="#333">+8.0 pp</text>
+<text x="290" y="124" font-family="Arial, sans-serif" font-size="11" text-anchor="end">Other</text>
+<rect x="300" y="110" width="593.6" height="18" fill="#b3453d"><title>Other: mean lost-retained 7.65 percentage points</title></rect>
+<text x="900.6" y="124" font-family="Arial, sans-serif" font-size="11" fill="#333">+7.7 pp</text>
+<text x="290" y="153" font-family="Arial, sans-serif" font-size="11" text-anchor="end">Homeobox</text>
+<rect x="300" y="139" width="592.8" height="18" fill="#b3453d"><title>Homeobox: mean lost-retained 7.64 percentage points</title></rect>
+<text x="899.8" y="153" font-family="Arial, sans-serif" font-size="11" fill="#333">+7.6 pp</text>
+<text x="290" y="182" font-family="Arial, sans-serif" font-size="11" text-anchor="end">MYC/MAX/bHLH</text>
+<rect x="300" y="168" width="583.5" height="18" fill="#b3453d"><title>MYC/MAX/bHLH: mean lost-retained 7.52 percentage points</title></rect>
+<text x="890.5" y="182" font-family="Arial, sans-serif" font-size="11" fill="#333">+7.5 pp</text>
+<text x="24" y="228" font-family="Arial, sans-serif" font-size="12" fill="#555">Contrast uses HOMER target/background motif percentages from the sampled global JQ1-lost analysis.</text>
+</svg>

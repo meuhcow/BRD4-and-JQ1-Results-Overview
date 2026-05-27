@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="433" viewBox="0 0 1100 433">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="700">JQ1-Lost Motif Program Counts</text>
+<text x="24" y="50" font-family="Arial, sans-serif" font-size="12" fill="#555">Known motif programs among enriched JQ1-lost BRD4 regions.</text>
+<text x="262" y="78" font-family="Arial, sans-serif" font-size="11" text-anchor="end">Other</text>
+<rect x="270" y="63" width="790.0" height="20" fill="#4f7f9f"/>
+<text x="1066.0" y="78" font-family="Arial, sans-serif" font-size="11" fill="#333">224.0</text>
+<text x="262" y="108" font-family="Arial, sans-serif" font-size="11" text-anchor="end">Homeobox</text>
+<rect x="270" y="93" width="331.5" height="20" fill="#4f7f9f"/>
+<text x="607.5" y="108" font-family="Arial, sans-serif" font-size="11" fill="#333">94.0</text>
+<text x="262" y="138" font-family="Arial, sans-serif" font-size="11" text-anchor="end">MYC/MAX/bHLH</text>
+<rect x="270" y="123" width="201.0" height="20" fill="#4f7f9f"/>
+<text x="477.0" y="138" font-family="Arial, sans-serif" font-size="11" fill="#333">57.0</text>
+<text x="262" y="168" font-family="Arial, sans-serif" font-size="11" text-anchor="end">ER/AR/Nuclear receptor</text>
+<rect x="270" y="153" width="176.3" height="20" fill="#4f7f9f"/>
+<text x="452.3" y="168" font-family="Arial, sans-serif" font-size="11" fill="#333">50.0</text>
+<text x="262" y="198" font-family="Arial, sans-serif" font-size="11" text-anchor="end">ETS</text>
+<rect x="270" y="183" width="98.8" height="20" fill="#4f7f9f"/>
+<text x="374.8" y="198" font-family="Arial, sans-serif" font-size="11" fill="#333">28.0</text>
+<text x="262" y="228" font-family="Arial, sans-serif" font-size="11" text-anchor="end">STAT/IRF/immune</text>
+<rect x="270" y="213" width="63.5" height="20" fill="#4f7f9f"/>
+<text x="339.5" y="228" font-family="Arial, sans-serif" font-size="11" fill="#333">18.0</text>
+<text x="262" y="258" font-family="Arial, sans-serif" font-size="11" text-anchor="end">AP-1/JUN/FOS</text>
+<rect x="270" y="243" width="24.7" height="20" fill="#4f7f9f"/>
+<text x="300.7" y="258" font-family="Arial, sans-serif" font-size="11" fill="#333">7.0</text>
+<text x="262" y="288" font-family="Arial, sans-serif" font-size="11" text-anchor="end">NF-kB/REL</text>
+<rect x="270" y="273" width="14.1" height="20" fill="#4f7f9f"/>
+<text x="290.1" y="288" font-family="Arial, sans-serif" font-size="11" fill="#333">4.0</text>
+<text x="262" y="318" font-family="Arial, sans-serif" font-size="11" text-anchor="end">RUNX</text>
+<rect x="270" y="303" width="10.6" height="20" fill="#4f7f9f"/>
+<text x="286.6" y="318" font-family="Arial, sans-serif" font-size="11" fill="#333">3.0</text>
+<text x="262" y="348" font-family="Arial, sans-serif" font-size="11" text-anchor="end">GATA</text>
+<rect x="270" y="333" width="10.6" height="20" fill="#4f7f9f"/>
+<text x="286.6" y="348" font-family="Arial, sans-serif" font-size="11" fill="#333">3.0</text>
+<text x="262" y="378" font-family="Arial, sans-serif" font-size="11" text-anchor="end">FOX</text>
+<rect x="270" y="363" width="3.5" height="20" fill="#4f7f9f"/>
+<text x="279.5" y="378" font-family="Arial, sans-serif" font-size="11" fill="#333">1.0</text>
+</svg>

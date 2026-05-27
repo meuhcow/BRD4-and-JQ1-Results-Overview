@@ -1,0 +1,11 @@
+metric	value
+pair_level_n	43
+pair_level_pearson_log10_ctrl_vs_percent_lost	-0.4125
+pair_level_spearman_ctrl_vs_percent_lost	-0.4629
+pair_level_linear_fit_slope_percent_per_log10_peak	-19.8465
+pair_level_linear_fit_intercept	156.7455
+pair_level_median_ctrl_peak_count	19989.0
+pair_level_median_percent_lost_vs_ctrl_peaks	69.63
+cancer_level_n	17
+cancer_level_pearson_log10_ctrl_vs_percent_lost	-0.344
+cancer_level_spearman_ctrl_vs_percent_lost	-0.3407

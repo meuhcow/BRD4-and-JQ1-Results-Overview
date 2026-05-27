@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="650" viewBox="0 0 1240 650">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="700">Regulatory Context Of Top JQ1-Vulnerable Regions</text>
+<text x="24" y="54" font-family="Arial, sans-serif" font-size="12" fill="#555">Top 200 candidate-sized recurrent vulnerable regions. Enhancer-like is a distal intronic/intergenic proxy from HOMER annotation and TSS distance.</text>
+<text x="195" y="88" font-family="Arial, sans-serif" font-size="15" font-weight="700">Regulatory context</text>
+<text x="187" y="134" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Distal enhancer-like</text>
+<rect x="195" y="118" width="370.0" height="22" fill="#4f7f9f"><title>Distal enhancer-like: 129 regions (64.5%)</title></rect>
+<text x="572.0" y="134" font-family="Arial, sans-serif" font-size="12" fill="#333">129 (64.5%)</text>
+<text x="187" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Promoter-proximal</text>
+<rect x="195" y="154" width="94.7" height="22" fill="#4f7f9f"><title>Promoter-proximal: 33 regions (16.5%)</title></rect>
+<text x="296.7" y="170" font-family="Arial, sans-serif" font-size="12" fill="#333">33 (16.5%)</text>
+<text x="187" y="206" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Gene body non-promoter</text>
+<rect x="195" y="190" width="63.1" height="22" fill="#4f7f9f"><title>Gene body non-promoter: 22 regions (11.0%)</title></rect>
+<text x="265.1" y="206" font-family="Arial, sans-serif" font-size="12" fill="#333">22 (11.0%)</text>
+<text x="187" y="242" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Intergenic near-gene</text>
+<rect x="195" y="226" width="25.8" height="22" fill="#4f7f9f"><title>Intergenic near-gene: 9 regions (4.5%)</title></rect>
+<text x="227.8" y="242" font-family="Arial, sans-serif" font-size="12" fill="#333">9 (4.5%)</text>
+<text x="187" y="278" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Other</text>
+<rect x="195" y="262" width="20.1" height="22" fill="#4f7f9f"><title>Other: 7 regions (3.5%)</title></rect>
+<text x="222.1" y="278" font-family="Arial, sans-serif" font-size="12" fill="#333">7 (3.5%)</text>
+<text x="800" y="88" font-family="Arial, sans-serif" font-size="15" font-weight="700">Broad HOMER annotation</text>
+<text x="792" y="134" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Intron</text>
+<rect x="800" y="118" width="370.0" height="22" fill="#9a6b9f"><title>Intron: 81 regions (40.5%)</title></rect>
+<text x="1177.0" y="134" font-family="Arial, sans-serif" font-size="12" fill="#333">81 (40.5%)</text>
+<text x="792" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Intergenic</text>
+<rect x="800" y="154" width="347.2" height="22" fill="#9a6b9f"><title>Intergenic: 76 regions (38.0%)</title></rect>
+<text x="1154.2" y="170" font-family="Arial, sans-serif" font-size="12" fill="#333">76 (38.0%)</text>
+<text x="792" y="206" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Exon</text>
+<rect x="800" y="190" width="95.9" height="22" fill="#9a6b9f"><title>Exon: 21 regions (10.5%)</title></rect>
+<text x="902.9" y="206" font-family="Arial, sans-serif" font-size="12" fill="#333">21 (10.5%)</text>
+<text x="792" y="242" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Promoter</text>
+<rect x="800" y="226" width="68.5" height="22" fill="#9a6b9f"><title>Promoter: 15 regions (7.5%)</title></rect>
+<text x="875.5" y="242" font-family="Arial, sans-serif" font-size="12" fill="#333">15 (7.5%)</text>
+<text x="792" y="278" font-family="Arial, sans-serif" font-size="12" text-anchor="end">Other</text>
+<rect x="800" y="262" width="32.0" height="22" fill="#9a6b9f"><title>Other: 7 regions (3.5%)</title></rect>
+<text x="839.0" y="278" font-family="Arial, sans-serif" font-size="12" fill="#333">7 (3.5%)</text>
+<text x="24" y="592" font-family="Arial, sans-serif" font-size="12" fill="#555">Promoter-proximal: HOMER promoter or &lt;=1 kb from TSS. Distal enhancer-like: intronic/intergenic and &gt;2.5 kb from TSS.</text>
+<text x="24" y="610" font-family="Arial, sans-serif" font-size="12" fill="#555">This is a genomic-context proxy, not a direct chromatin-state enhancer annotation.</text>
+</svg>

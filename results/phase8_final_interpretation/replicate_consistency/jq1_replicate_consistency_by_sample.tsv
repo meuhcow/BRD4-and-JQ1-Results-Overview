@@ -1,0 +1,10 @@
+sample	cancer_type	matched_pairs	replicates	mean_percent_lost_vs_ctrl_peaks	median_percent_lost_vs_ctrl_peaks	sd_percent_lost_vs_ctrl_peaks	min_percent_lost_vs_ctrl_peaks	max_percent_lost_vs_ctrl_peaks	range_percent_lost_percentage_points	consistency_label	mean_ctrl_peak_count	mean_jq1_peak_count	mean_lost_region_count	replicate_percent_lost_values
+U87	Glioblastoma multiome	2	rep1,rep2	99.72	99.72	0.25	99.55	99.9	0.35	high	4764.0	424.0	4753.0	99.90,99.55
+OS-RC-2	Clear cell renal cell carcinoma	2	rep1,rep2	84.92	84.92	3.3	82.59	87.25	4.66	high	26662.5	14209.5	22478.5	87.25,82.59
+MutuI	Burkitt's lymphoma	2	rep1,rep2	88.77	88.77	9.55	82.01	95.52	13.51	moderate	31831.5	5893.5	27596.0	95.52,82.01
+COLO320-DM	Colorectal cancer	2	rep1,rep2	67.96	67.96	10.3	60.68	75.24	14.56	moderate	21926.0	11736.5	15067.5	75.24,60.68
+GSC316	Glioblastoma multiome	2	rep1,rep2	65.23	65.23	3.68	62.63	67.84	5.21	moderate	13168.0	5314.5	8643.0	67.84,62.63
+BT549	Breast cancer	3	rep1,rep2,rep3	61.78	60.74	4.28	58.11	66.48	8.37	moderate	71990.67	40698.67	44405.0	66.48,58.11,60.74
+MDA-MB-231	Breast cancer	2	rep1,rep2	80.92	80.92	21.52	65.71	96.14	30.43	variable	4063.5	1992.5	3518.5	96.14,65.71
+PC3	Prostate cancer	2	rep1,rep2	73.94	73.94	10.79	66.31	81.57	15.26	variable	6490.5	2578.5	5006.0	66.31,81.57
+COLO320-HSR	Colorectal cancer	2	rep1,rep2	63.02	63.02	11.49	54.89	71.14	16.25	variable	16042.0	11000.5	10175.5	54.89,71.14

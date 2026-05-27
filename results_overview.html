@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BRD4 JQ1 Project Results</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f2430;
+      --muted: #667085;
+      --line: #d8dee8;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --green: #22715d;
+      --blue: #315f9f;
+      --red: #a94635;
+      --gold: #9a6b13;
+      --violet: #6651a6;
+      --shadow: 0 18px 45px rgba(31, 36, 48, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .hero {
+      min-height: 86vh;
+      display: grid;
+      align-items: end;
+      padding: 42px clamp(20px, 4vw, 72px);
+      background:
+        linear-gradient(90deg, rgba(11, 22, 38, 0.78), rgba(11, 22, 38, 0.34) 62%, rgba(11, 22, 38, 0.1)),
+        url("results/phase8_final_interpretation/untreated_brd4_baseline/untreated_brd4_cancer_type_similarity_heatmap.svg") center / cover no-repeat,
+        #182231;
+      color: #fff;
+    }
+
+    .hero-inner {
+      width: min(1120px, 100%);
+      display: grid;
+      gap: 28px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(2.4rem, 7vw, 6.6rem);
+      line-height: 0.93;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(1rem, 2vw, 1.28rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.13);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+    }
+
+    main {
+      display: grid;
+      gap: 34px;
+      padding: 36px clamp(16px, 4vw, 72px) 72px;
+    }
+
+    section {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.45rem);
+      letter-spacing: 0;
+    }
+
+    .section-note {
+      margin: 0;
+      max-width: 620px;
+      color: var(--muted);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      min-height: 122px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .phase-card {
+      position: relative;
+      min-height: 240px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .phase-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .phase-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #424b5c;
+      background: #f8fafc;
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .story-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .middle-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .stacked-panels {
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-body {
+      padding: 20px;
+    }
+
+    .panel h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .figure {
+      padding: 14px;
+    }
+
+    .figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      font-size: 0.92rem;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: #3b4453;
+      background: #f1f4f8;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    td:last-child,
+    th:last-child {
+      text-align: right;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .analysis-card {
+      min-height: 250px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      display: grid;
+      align-content: start;
+      gap: 10px;
+    }
+
+    .analysis-card h3 {
+      margin: 0;
+      font-size: 1.08rem;
+    }
+
+    .analysis-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .analysis-card strong {
+      color: var(--ink);
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+      color: #2f4f86;
+      text-decoration: none;
+      font-weight: 750;
+      font-size: 0.86rem;
+    }
+
+    .callout {
+      padding: 24px;
+      border-left: 6px solid var(--green);
+      border-radius: 8px;
+      background: #eef7f4;
+      color: #1e5144;
+    }
+
+    .callout h2 {
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+    }
+
+    .callout p {
+      margin: 10px 0 0;
+      max-width: 900px;
+    }
+
+    footer {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: 22px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 960px) {
+      .metric-grid,
+      .phase-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .story-band,
+      .two-col,
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        min-height: 82vh;
+      }
+
+      .metric-grid,
+      .phase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-note {
+        margin-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">BRD4 JQ1 project results</p>
+      <h1>BRD4 and JQ1 Results Overview</h1>
+      <p class="hero-copy">
+        A compact walkthrough of the project: data audit, consensus peak building,
+        matched Ctrl/JQ1 comparison, hg19 harmonization, motif and pathway analysis,
+        robustness checks, candidate prioritization, and the final candidate-region interpretation.
+      </p>
+      <div class="hero-actions" aria-label="Page sections">
+        <a class="button" href="#phases">View workflow</a>
+        <a class="button" href="#final-results">See final results</a>
+        <a class="button" href="#additional-analyses">Explore added analyses</a>
+        <a class="button" href="#figures">Open figures</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="snapshot-title">
+      <div class="section-heading">
+        <h2 id="snapshot-title">Project Snapshot</h2>
+        <p class="section-note">The final interpreted cohort uses all selected matched BRD4 Ctrl/JQ1 pairs, with middle-phase harmonized outputs pulled from the internship results folder.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric">
+          <strong>86</strong>
+          <span>Selected BRD4 samples</span>
+        </div>
+        <div class="metric">
+          <strong>43</strong>
+          <span>Matched Ctrl/JQ1 pairs</span>
+        </div>
+        <div class="metric">
+          <strong>17</strong>
+          <span>Cancer or disease contexts</span>
+        </div>
+        <div class="metric">
+          <strong>422,853</strong>
+          <span>JQ1-lost hg19 regions used for motif foreground</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="phases" aria-labelledby="phases-title">
+      <div class="section-heading">
+        <h2 id="phases-title">Workflow Timeline</h2>
+        <p class="section-note">The middle workflow outputs come from <code>/Users/meuh_cow/Documents/internship/results</code>; motif/pathway and final interpretation outputs are in this project folder.</p>
+      </div>
+      <div class="phase-grid">
+        <article class="phase-card">
+          <h3>Data Audit</h3>
+          <p>Built the initial inventory from the external drive: 163 metadata rows, 102 BRD4 rows, 100 narrowPeak files, and sample-level file status tables.</p>
+          <div class="tag-row"><span class="tag">inventory</span><span class="tag">metadata</span></div>
+        </article>
+        <article class="phase-card">
+          <h3>Consensus Peaks</h3>
+          <p>Merged 81 included peak files into 410,275 consensus BRD4 regions with support annotations for downstream comparisons.</p>
+          <div class="tag-row"><span class="tag">410,275 regions</span><span class="tag">81 files</span></div>
+        </article>
+        <article class="phase-card">
+          <h3>Harmonized Peak Sets</h3>
+          <p>Standardized peak sets by group: 43 cancer-control samples, 1,285,397 cancer-control peak rows, and 368,651 cancer-control consensus regions.</p>
+          <div class="tag-row"><span class="tag">368,651 consensus</span><span class="tag">Jaccard</span></div>
+        </article>
+        <article class="phase-card">
+          <h3>Sample Vulnerability</h3>
+          <p>Calculated per-sample JQ1 vulnerability from Ctrl peak counts and lost-peak counts, identifying high-loss contexts such as GIST-T1 and ATLL.</p>
+          <div class="tag-row"><span class="tag">percent lost</span><span class="tag">sample ranks</span></div>
+        </article>
+        <article class="phase-card">
+          <h3>Common Summits and Genes</h3>
+          <p>Built recurrent summit clusters and nearest-gene summaries, including 249,743 hg19 min-2-sample common summit regions and recurrent lost-peak genes.</p>
+          <div class="tag-row"><span class="tag">249,743 clusters</span><span class="tag">nearest genes</span></div>
+        </article>
+        <article class="phase-card">
+          <h3>Genomic Context</h3>
+          <p>Annotated promoter, gene-body, and intergenic context for common summits and JQ1-lost regions across hg18, hg19, and hg38 coordinate sets.</p>
+          <div class="tag-row"><span class="tag">promoter</span><span class="tag">gene body</span><span class="tag">intergenic</span></div>
+        </article>
+        <article class="phase-card">
+          <h3>Motifs and Pathways</h3>
+          <p>Harmonized JQ1-lost regions to hg19, assembled motif foreground/background sets, and summarized HOMER motif/pathway enrichment.</p>
+          <div class="tag-row"><span class="tag">hg19</span><span class="tag">HOMER</span></div>
+        </article>
+        <article class="phase-card">
+          <h3>Final Interpretation</h3>
+          <p>Integrated QC, baseline binding, JQ1 vulnerability, recurrent candidate regions, IGV targets, motifs, and pathways into a final story.</p>
+          <div class="tag-row"><span class="tag">candidate loci</span><span class="tag">final figures</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="middle-title">
+      <div class="section-heading">
+        <h2 id="middle-title">Middle-Phase Results</h2>
+        <p class="section-note">These are the extra results from the internship folder that complete the story between the initial audit and the final interpretation.</p>
+      </div>
+      <div class="middle-stack">
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Sample similarity</h3>
+            <p>Untreated cancer-control samples were compared by pairwise Jaccard similarity. The strongest pairs were mostly same-cell-line or closely related replicate pairs.</p>
+          </div>
+          <div class="figure">
+            <img src="webpage_assets/phase3_cancer_ctrl_jaccard_clustermap.png" alt="Cancer-control Jaccard clustermap with cancer type labels">
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Vulnerability leaders</h3>
+            <p>Sample-level vulnerability ranked Ctrl peak burden against peaks lost after JQ1 treatment.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Sample</th><th>Cancer type</th><th>Ctrl peaks</th><th>Lost peaks</th><th>% lost</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>GIST-T1 rep1</td><td>Gastrointestinal stromal tumor</td><td>4,869</td><td>4,809</td><td>98.77</td></tr>
+                <tr><td>KK1 rep1</td><td>Adult T-cell Leukemia/Lymphoma (ATLL)</td><td>10,400</td><td>10,229</td><td>98.36</td></tr>
+                <tr><td>MDA-MB-231 rep1</td><td>Breast cancer</td><td>5,575</td><td>5,360</td><td>96.14</td></tr>
+                <tr><td>HCT116 rep1</td><td>Colon cancer</td><td>15,126</td><td>12,938</td><td>85.53</td></tr>
+                <tr><td>LP-1 rep1</td><td>Multiple myeloma</td><td>8,794</td><td>7,329</td><td>83.34</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+      <div class="stacked-panels" style="margin-top: 16px;">
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Recurrent lost-peak genes</h3>
+            <p>Nearest-gene summaries highlighted recurrent genes across samples, led by RAD51B, ZMYND8, KCNMA1, NCOR2, and BICRAL.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Gene</th><th>Samples</th><th>Peak-gene pairs</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>RAD51B</td><td>42</td><td>982</td></tr>
+                <tr><td>ZMYND8</td><td>42</td><td>242</td></tr>
+                <tr><td>KCNMA1</td><td>41</td><td>669</td></tr>
+                <tr><td>NCOR2</td><td>41</td><td>377</td></tr>
+                <tr><td>BICRAL</td><td>41</td><td>114</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Genomic context</h3>
+            <p>JQ1-lost hg19 regions were mostly gene-body or intergenic, with a smaller promoter fraction.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Peak set</th><th>Promoter</th><th>Gene body</th><th>Intergenic</th><th>Total</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>JQ1-lost hg19</td><td>6.63%</td><td>42.43%</td><td>50.94%</td><td>647,028</td></tr>
+                <tr><td>Common summits hg19 min2</td><td>4.44%</td><td>32.35%</td><td>63.22%</td><td>253,040</td></tr>
+                <tr><td>Ctrl-only common hg19</td><td>6.27%</td><td>46.01%</td><td>47.72%</td><td>37,565</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="final-results" aria-labelledby="final-title">
+      <div class="section-heading">
+        <h2 id="final-title">Final Results</h2>
+        <p class="section-note">The strongest signals are uneven across cancers: baseline BRD4 burden and JQ1 loss do not rank the same disease contexts.</p>
+      </div>
+      <div class="stacked-panels">
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Strong baseline BRD4 binding</h3>
+            <p>Neuroblastoma, alveolar soft part sarcoma, breast cancer, Burkitt's lymphoma, and acute myeloid leukemia had among the strongest untreated BRD4 peak burdens. Breast cancer also contributed the largest multi-sample cohort and the largest cancer-specific consensus-region count.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Cancer type</th><th>Ctrl samples</th><th>Median ctrl peaks</th><th>Cancer-specific regions</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Neuroblastoma</td><td>1</td><td>96,287</td><td>22,208</td></tr>
+                <tr><td>Alveolar soft part sarcoma</td><td>1</td><td>76,030</td><td>16,611</td></tr>
+                <tr><td>Rheumatoid arthritis</td><td>2</td><td>55,568</td><td>17,956</td></tr>
+                <tr><td>Breast cancer</td><td>14</td><td>40,230</td><td>120,078</td></tr>
+                <tr><td>Burkitt's lymphoma</td><td>3</td><td>29,371</td><td>27,191</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Strong proportional JQ1 loss</h3>
+            <p>Gastrointestinal stromal tumor, ATLL, ovarian cancer, Burkitt's lymphoma, and colon cancer showed the highest mean percent lost compared with untreated BRD4 peak counts.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Cancer type</th><th>Pairs</th><th>Mean % lost</th><th>Total lost regions</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Gastrointestinal stromal tumor</td><td>1</td><td>98.77</td><td>4,809</td></tr>
+                <tr><td>Adult T-cell Leukemia/Lymphoma (ATLL)</td><td>1</td><td>98.36</td><td>10,229</td></tr>
+                <tr><td>Ovarian cancer</td><td>1</td><td>97.21</td><td>15,084</td></tr>
+                <tr><td>Burkitt's lymphoma</td><td>3</td><td>87.33</td><td>79,998</td></tr>
+                <tr><td>Colon cancer</td><td>1</td><td>85.53</td><td>12,938</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="additional-analyses" aria-labelledby="additional-title">
+      <div class="section-heading">
+        <h2 id="additional-title">Additional Analyses</h2>
+        <p class="section-note">Eight follow-up analyses test robustness, explain heterogeneity, and turn the region-level outputs into interpretable candidate priorities.</p>
+      </div>
+      <div class="analysis-grid">
+        <article class="analysis-card">
+          <h3>1. Replicate consistency</h3>
+          <p><strong>9</strong> repeated cell-line/model groups had multiple matched Ctrl/JQ1 pairs. U87 and OS-RC-2 were highly consistent; MDA-MB-231, PC3, and COLO320-HSR were variable.</p>
+          <div class="tag-row"><span class="tag">2 high</span><span class="tag">4 moderate</span><span class="tag">3 variable</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/replicate_consistency/jq1_replicate_consistency_percent_lost.svg">Figure</a>
+            <a class="text-link" href="results/phase8_final_interpretation/replicate_consistency/jq1_replicate_consistency_by_sample.tsv">Table</a>
+          </div>
+        </article>
+
+        <article class="analysis-card">
+          <h3>2. Baseline burden vs JQ1 loss</h3>
+          <p>Untreated BRD4 peak burden did not positively predict proportional JQ1 loss. Pair-level Pearson was <strong>-0.4125</strong>, and Spearman was <strong>-0.4629</strong>.</p>
+          <div class="tag-row"><span class="tag">negative trend</span><span class="tag">43 pairs</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/baseline_vs_jq1_sensitivity/baseline_vs_jq1_sensitivity_scatter.svg">Figure</a>
+            <a class="text-link" href="results/phase8_final_interpretation/baseline_vs_jq1_sensitivity/baseline_vs_jq1_sensitivity_correlation_summary.tsv">Stats</a>
+          </div>
+        </article>
+
+        <article class="analysis-card">
+          <h3>3. Promoter vs enhancer-like context</h3>
+          <p>Among the top 200 candidates, <strong>129</strong> were distal enhancer-like by annotation/TSS-distance proxy and <strong>33</strong> were promoter-proximal.</p>
+          <div class="tag-row"><span class="tag">64.5% distal</span><span class="tag">16.5% promoter-proximal</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/regulatory_context/jq1_vulnerable_region_regulatory_context.svg">Figure</a>
+            <a class="text-link" href="results/phase8_final_interpretation/regulatory_context/jq1_vulnerable_region_regulatory_context_summary.tsv">Summary</a>
+          </div>
+        </article>
+
+        <article class="analysis-card">
+          <h3>4. Shared vs cancer-specific loss</h3>
+          <p>Most candidate-sized vulnerable regions were cancer-type-specific: <strong>336,437</strong> of 422,757. A small pan-cancer core contained <strong>556</strong> regions.</p>
+          <div class="tag-row"><span class="tag">79.58% specific</span><span class="tag">556 pan-cancer</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/shared_vs_specific_vulnerability/jq1_shared_vs_cancer_specific_vulnerable_regions.svg">Figure</a>
+            <a class="text-link" href="results/phase8_final_interpretation/shared_vs_specific_vulnerability/jq1_vulnerable_region_sharing_summary.tsv">Summary</a>
+          </div>
+        </article>
+
+        <article class="analysis-card">
+          <h3>5. Response outliers</h3>
+          <p><strong>22</strong> matched pairs were flagged. MOLT4 and ASPS-KY were the clearest resistant/retained-binding examples; SUM159, U87, GIST-T1, KK1, OVCAR3, MDA-MB-231, and MutuI were strong sensitive examples.</p>
+          <div class="tag-row"><span class="tag">8 extreme sensitive</span><span class="tag">2 extreme resistant</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/outlier_analysis/jq1_response_outlier_scatter.svg">Figure</a>
+            <a class="text-link" href="results/phase8_final_interpretation/outlier_analysis/jq1_response_outliers_by_pair.tsv">Table</a>
+          </div>
+        </article>
+
+        <article class="analysis-card">
+          <h3>6. Candidate prioritization</h3>
+          <p>The composite candidate score prioritized <strong>E2F3</strong>, TARBP1, FBXL5, PAIP1, UBE2R2, IQGAP1, ZBTB7B, WEE1, VEGFA, and CA10.</p>
+          <div class="tag-row"><span class="tag">200 scored</span><span class="tag">top 25 shortlist</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/candidate_gene_prioritization/top_prioritized_jq1_vulnerable_candidate_genes.svg">Figure</a>
+            <a class="text-link" href="results/phase8_final_interpretation/candidate_gene_prioritization/top25_prioritized_jq1_vulnerable_candidate_genes.tsv">Top 25</a>
+          </div>
+        </article>
+
+        <article class="analysis-card">
+          <h3>7. Sensitive vs resistant enrichment</h3>
+          <p>High-sensitivity cancers showed strong ER/AR/nuclear receptor, Homeobox, MYC/MAX/bHLH, ETS, and related motif-program signals. Low-sensitivity contexts had sparse motif calls.</p>
+          <div class="tag-row"><span class="tag">7 high-sensitivity contexts</span><span class="tag">2 low-sensitivity contexts</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/sensitive_resistant_enrichment/jq1_sensitive_vs_resistant_motif_program_contrast.svg">Figure</a>
+            <a class="text-link" href="results/phase8_final_interpretation/sensitive_resistant_enrichment/jq1_sensitive_vs_resistant_motif_program_contrast.tsv">Contrast</a>
+          </div>
+        </article>
+
+        <article class="analysis-card">
+          <h3>8. Lost vs retained motif enrichment</h3>
+          <p>JQ1-lost regions had stronger motif occurrence than the BRD4 background for ER/AR/nuclear receptor, Other, Homeobox, and MYC/MAX/bHLH programs.</p>
+          <div class="tag-row"><span class="tag">+8.0 pp ER/AR</span><span class="tag">25 motifs</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/lost_vs_retained_motif_enrichment/jq1_lost_vs_retained_motif_program_delta.svg">Figure</a>
+            <a class="text-link" href="results/phase8_final_interpretation/lost_vs_retained_motif_enrichment/jq1_lost_vs_retained_motif_program_summary.tsv">Summary</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="common-peaks-title">
+      <div class="section-heading">
+        <h2 id="common-peaks-title">Common JQ1-Lost Peaks Across Cancer Types</h2>
+        <p class="section-note">Pan-cancer shared vulnerable regions ranked by the number of cancer types in which the same hg19 region loses BRD4 after JQ1 treatment.</p>
+      </div>
+      <div class="panel table-wrap">
+        <table>
+          <thead>
+            <tr><th>Rank</th><th>Region</th><th>Nearest gene</th><th>Cancer types</th><th>Samples</th><th>Lost peak records</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>chr6:20400791-20404966</td><td>E2F3</td><td>14</td><td>25</td><td>54</td></tr>
+            <tr><td>2</td><td>chr5:43555258-43558197</td><td>PAIP1</td><td>14</td><td>24</td><td>29</td></tr>
+            <tr><td>3</td><td>chr4:15653249-15658095</td><td>FBXL5</td><td>13</td><td>32</td><td>39</td></tr>
+            <tr><td>4</td><td>chr17:50147890-50152657</td><td>CA10</td><td>13</td><td>27</td><td>45</td></tr>
+            <tr><td>5</td><td>chr7:104942506-104947156</td><td>SRPK2</td><td>13</td><td>18</td><td>28</td></tr>
+            <tr><td>6</td><td>chr1:234610007-234619582</td><td>TARBP1</td><td>12</td><td>35</td><td>70</td></tr>
+            <tr><td>7</td><td>chr17:81866943-81874073</td><td>RPL23AP87</td><td>12</td><td>30</td><td>58</td></tr>
+            <tr><td>8</td><td>chr1:154970272-154977126</td><td>ZBTB7B</td><td>12</td><td>28</td><td>66</td></tr>
+            <tr><td>9</td><td>chr10:72317920-72326038</td><td>PRF1</td><td>12</td><td>28</td><td>59</td></tr>
+            <tr><td>10</td><td>chr16:2152232-2157504</td><td>MIR6511B2</td><td>12</td><td>27</td><td>50</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-note">
+        Full ranked table:
+        <a class="text-link" href="results/phase8_final_interpretation/shared_vs_specific_vulnerability/top_pan_cancer_shared_jq1_vulnerable_regions.tsv">top pan-cancer shared JQ1-lost regions</a>.
+      </p>
+    </section>
+
+    <section aria-labelledby="candidate-title">
+      <div class="section-heading">
+        <h2 id="candidate-title">Recurrent Vulnerable Regions</h2>
+        <p class="section-note">Candidate loci concentrate near genes with plausible cancer biology, regulatory, cell-cycle, chromatin, RNA-processing, or signaling relevance.</p>
+      </div>
+      <div class="panel table-wrap">
+        <table>
+          <thead>
+            <tr><th>Rank</th><th>Nearest gene</th><th>Region</th><th>Samples</th><th>Cancer types</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>E2F3</td><td>chr6:20400791-20404966</td><td>25</td><td>14</td></tr>
+            <tr><td>2</td><td>PAIP1</td><td>chr5:43555258-43558197</td><td>24</td><td>14</td></tr>
+            <tr><td>3</td><td>FBXL5</td><td>chr4:15653249-15658095</td><td>32</td><td>13</td></tr>
+            <tr><td>4</td><td>CA10</td><td>chr17:50147890-50152657</td><td>27</td><td>13</td></tr>
+            <tr><td>5</td><td>SRPK2</td><td>chr7:104942506-104947156</td><td>18</td><td>13</td></tr>
+            <tr><td>6</td><td>TARBP1</td><td>chr1:234610007-234619582</td><td>35</td><td>12</td></tr>
+            <tr><td>7</td><td>UBE2R2</td><td>chr9:33816641-33819035</td><td>27</td><td>12</td></tr>
+            <tr><td>8</td><td>ZBTB7B</td><td>chr1:154970272-154977126</td><td>28</td><td>12</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="figures" aria-labelledby="figures-title">
+      <div class="section-heading">
+        <h2 id="figures-title">Figure Highlights</h2>
+        <p class="section-note">These images are loaded directly from the final output folders, keeping the page tied to the generated analysis files.</p>
+      </div>
+      <div class="stacked-panels">
+        <article class="panel">
+          <div class="panel-body">
+            <h3>JQ1 vulnerability by cancer type</h3>
+            <p>Percent lost compared with untreated BRD4 peak counts.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/jq1_vulnerability/jq1_percent_lost_by_cancer_type.svg" alt="Bar plot showing JQ1 percent lost by cancer type">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Replicate consistency</h3>
+            <p>Repeated model pairs show which JQ1-response estimates are robust and which need heterogeneity caveats.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/replicate_consistency/jq1_replicate_consistency_percent_lost.svg?v=20260526" alt="Replicate consistency plot showing percent lost spread by repeated model">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Baseline burden versus sensitivity</h3>
+            <p>Baseline BRD4 peak count does not simply explain proportional JQ1 loss.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/baseline_vs_jq1_sensitivity/baseline_vs_jq1_sensitivity_scatter.svg?v=20260526b" alt="Scatter plot comparing untreated BRD4 peak burden to JQ1 percent loss">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Candidate region annotations</h3>
+            <p>Genomic annotation categories for recurrent JQ1-vulnerable regions.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/candidate_region_annotation/top_candidate_region_annotation_summary.svg" alt="Annotation summary for top candidate vulnerable regions">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Promoter versus enhancer-like context</h3>
+            <p>Most top candidates fall in distal intronic/intergenic enhancer-like contexts by annotation and TSS distance.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/regulatory_context/jq1_vulnerable_region_regulatory_context.svg?v=20260526c" alt="Regulatory context summary for top JQ1-vulnerable regions">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Shared versus cancer-specific vulnerability</h3>
+            <p>A small pan-cancer core sits inside a much larger cancer-type-specific vulnerable-region landscape.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/shared_vs_specific_vulnerability/jq1_shared_vs_cancer_specific_vulnerable_regions.svg?v=20260526b" alt="Shared versus cancer-specific vulnerable region summary">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>JQ1 response outliers</h3>
+            <p>Flagged pairs highlight unusually sensitive, resistant, baseline-discordant, and replicate-variable cases.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/outlier_analysis/jq1_response_outlier_scatter.svg?v=20260526f" alt="Outlier-labeled scatter plot of baseline BRD4 burden versus JQ1 sensitivity">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Prioritized candidate genes</h3>
+            <p>Composite scoring ranks candidate genes and regions using recurrence, annotation, sharing, gene evidence, and IGV shortlist status.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/candidate_gene_prioritization/top_prioritized_jq1_vulnerable_candidate_genes.svg?v=20260526" alt="Prioritized JQ1-vulnerable candidate gene score figure">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Motif programs</h3>
+            <p>Global motif-program counts from JQ1-lost regions.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/enrichment_summary/jq1_lost_global_motif_program_counts.svg" alt="Global motif program counts in JQ1-lost regions">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Sensitive versus resistant motif programs</h3>
+            <p>High-sensitivity contexts have stronger detected motif-program signals than low-sensitivity contexts in the current summaries.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/sensitive_resistant_enrichment/jq1_sensitive_vs_resistant_motif_program_contrast.svg?v=20260526g" alt="Motif program contrast between high and low JQ1 sensitivity groups">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Lost versus retained motif enrichment</h3>
+            <p>Motif occurrence is compared between the JQ1-lost foreground and the BRD4 retained/background comparison set.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/lost_vs_retained_motif_enrichment/jq1_lost_vs_retained_motif_program_delta.svg?v=20260527" alt="Motif program enrichment in JQ1-lost regions compared with retained BRD4 background regions">
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Pathway strength</h3>
+            <p>Strongest pathway enrichment terms by cancer type.</p>
+          </div>
+          <div class="figure">
+            <img src="results/phase8_final_interpretation/enrichment_summary/jq1_lost_top_pathway_strength_by_cancer_type.svg" alt="Top pathway strength by cancer type">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="callout" aria-labelledby="takeaway-title">
+      <h2 id="takeaway-title">Main Takeaway</h2>
+      <p>
+        BRD4 binding landscapes differ substantially across cancer types, and JQ1 response is not uniform.
+        The added analyses strengthen that conclusion: baseline peak burden does not simply predict response,
+        most vulnerable regions are cancer-type-specific, top candidates can be prioritized around E2F3/TARBP1/FBXL5-like loci,
+        and sensitive contexts carry richer detected regulatory motif programs.
+      </p>
+    </section>
+
+    <footer>
+      Source files include <code>docs/phase1_data_audit_summary.md</code>, <code>results/phase7_FINAL_README.md</code>, <code>results/phase8_final_interpretation/phase8_written_interpretation_draft.md</code>, and the Phase VIII analysis subfolders linked above.
+    </footer>
+  </main>
+</body>
+</html>

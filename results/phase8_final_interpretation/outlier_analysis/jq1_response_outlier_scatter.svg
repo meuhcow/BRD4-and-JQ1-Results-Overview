@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="800" viewBox="0 0 1180 800">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="700">JQ1 Response Outliers</text>
+<text x="24" y="54" font-family="Arial, sans-serif" font-size="12" fill="#555">Flagged matched pairs by percent loss, baseline trend residual, and replicate variability.</text>
+<rect x="92" y="112" width="828" height="608" fill="#fbfbfb" stroke="#ddd"/>
+<line x1="92" y1="720.0" x2="920" y2="720.0" stroke="#e5e5e5"/>
+<text x="82" y="724.0" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">0%</text>
+<line x1="92" y1="604.2" x2="920" y2="604.2" stroke="#e5e5e5"/>
+<text x="82" y="608.2" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">20%</text>
+<line x1="92" y1="488.4" x2="920" y2="488.4" stroke="#e5e5e5"/>
+<text x="82" y="492.4" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">40%</text>
+<line x1="92" y1="372.6" x2="920" y2="372.6" stroke="#e5e5e5"/>
+<text x="82" y="376.6" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">60%</text>
+<line x1="92" y1="256.8" x2="920" y2="256.8" stroke="#e5e5e5"/>
+<text x="82" y="260.8" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">80%</text>
+<line x1="92" y1="141.0" x2="920" y2="141.0" stroke="#e5e5e5"/>
+<text x="82" y="145.0" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#555">100%</text>
+<line x1="92.0" y1="112" x2="92.0" y2="720" stroke="#eeeeee"/>
+<text x="92.0" y="742" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#555">3.4</text>
+<line x1="350.8" y1="112" x2="350.8" y2="720" stroke="#eeeeee"/>
+<text x="350.8" y="742" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#555">3.9</text>
+<line x1="609.5" y1="112" x2="609.5" y2="720" stroke="#eeeeee"/>
+<text x="609.5" y="742" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#555">4.4</text>
+<line x1="868.3" y1="112" x2="868.3" y2="720" stroke="#eeeeee"/>
+<text x="868.3" y="742" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#555">4.9</text>
+<circle cx="604.3" cy="720.0" r="7" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MOLT4 rep1 / T-ALL: 0.00% lost; extreme_resistant,more_resistant_than_baseline_trend,high_baseline_low_sensitivity</title></circle>
+<circle cx="858.4" cy="559.1" r="7" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>ASPS-KY rep1 / Alveolar soft part sarcoma: 27.79% lost; extreme_resistant,more_resistant_than_baseline_trend,high_baseline_low_sensitivity</title></circle>
+<circle cx="580.4" cy="166.9" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MutuI rep1 / Burkitt's lymphoma: 95.52% lost; extreme_sensitive,more_sensitive_than_baseline_trend</title></circle>
+<circle cx="501.2" cy="157.1" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>OVCAR3 rep1 / Ovarian cancer: 97.21% lost; extreme_sensitive,more_sensitive_than_baseline_trend,low_baseline_high_sensitivity</title></circle>
+<circle cx="271.2" cy="163.3" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MDA-MB-231 rep1 / Breast cancer: 96.14% lost; extreme_sensitive,low_baseline_high_sensitivity,variable_replicates</title></circle>
+<circle cx="411.3" cy="150.4" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>KK1 rep1 / Adult T-cell Leukemia/Lymphoma (ATLL): 98.36% lost; extreme_sensitive,more_sensitive_than_baseline_trend,low_baseline_high_sensitivity</title></circle>
+<circle cx="287.4" cy="141.5" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>U87 rep1 / Glioblastoma multiome: 99.90% lost; extreme_sensitive,low_baseline_high_sensitivity</title></circle>
+<circle cx="262.1" cy="141.0" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>SUM159 rep1 / Breast cancer: 100.00% lost; extreme_sensitive,low_baseline_high_sensitivity</title></circle>
+<circle cx="240.7" cy="148.1" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>GIST-T1 rep1 / Gastrointestinal stromal tumor: 98.77% lost; extreme_sensitive,low_baseline_high_sensitivity</title></circle>
+<circle cx="95.6" cy="339.5" r="7" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MDA-MB-231 rep2 / Breast cancer: 65.71% lost; more_resistant_than_baseline_trend,variable_replicates</title></circle>
+<circle cx="168.9" cy="143.6" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>U87 rep2 / Glioblastoma multiome: 99.55% lost; extreme_sensitive,low_baseline_high_sensitivity</title></circle>
+<circle cx="184.0" cy="336.0" r="7" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>PC3 rep1 / Prostate cancer: 66.31% lost; more_resistant_than_baseline_trend,variable_replicates</title></circle>
+<circle cx="497.0" cy="402.2" r="7" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>COLO320-HSR rep1 / Colorectal cancer: 54.89% lost; more_resistant_than_baseline_trend,variable_replicates</title></circle>
+<circle cx="158.8" cy="361.2" r="7" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>NB4 rep1 / Acute promyelocytic leukemia: 61.96% lost; more_resistant_than_baseline_trend</title></circle>
+<circle cx="525.9" cy="429.7" r="7" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>HCC1806 rep1 / Breast cancer: 50.14% lost; more_resistant_than_baseline_trend</title></circle>
+<circle cx="726.5" cy="470.7" r="7" fill="#287c71" fill-opacity="0.82" stroke="white" stroke-width="1"><title>SUM149 rep1 / Breast cancer: 43.06% lost; more_resistant_than_baseline_trend,high_baseline_low_sensitivity</title></circle>
+<circle cx="558.2" cy="193.8" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>OCI-AML3 rep1 / Acute myeloid leukemia: 90.88% lost; more_sensitive_than_baseline_trend</title></circle>
+<circle cx="554.5" cy="214.8" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>OS-RC-2 rep1 / Clear cell renal cell carcinoma: 87.25% lost; low_baseline_high_sensitivity</title></circle>
+<circle cx="383.7" cy="247.7" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>PC3 rep2 / Prostate cancer: 81.57% lost; low_baseline_high_sensitivity,variable_replicates</title></circle>
+<circle cx="495.5" cy="224.7" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>HCT116 rep1 / Colon cancer: 85.53% lost; low_baseline_high_sensitivity</title></circle>
+<circle cx="519.8" cy="308.1" r="7" fill="#bf7a18" fill-opacity="0.82" stroke="white" stroke-width="1"><title>COLO320-HSR rep2 / Colorectal cancer: 71.14% lost; variable_replicates</title></circle>
+<circle cx="373.6" cy="237.4" r="7" fill="#b3453d" fill-opacity="0.82" stroke="white" stroke-width="1"><title>LP-1 rep1 / Multiple myeloma: 83.34% lost; low_baseline_high_sensitivity</title></circle>
+<circle cx="911.5" cy="283.2" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>SK-N-BE2-C rep1 / Neuroblastoma: 75.44% lost; not_flagged</title></circle>
+<circle cx="722.8" cy="245.1" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MutuI rep2 / Burkitt's lymphoma: 82.01% lost; not_flagged</title></circle>
+<circle cx="644.6" cy="230.9" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>Raji rep1 / Burkitt's lymphoma: 84.46% lost; not_flagged</title></circle>
+<circle cx="675.3" cy="241.8" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>OS-RC-2 rep2 / Clear cell renal cell carcinoma: 82.59% lost; not_flagged</title></circle>
+<circle cx="665.8" cy="241.0" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MCF7 rep1 / Breast cancer: 82.73% lost; not_flagged</title></circle>
+<circle cx="517.2" cy="385.3" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>OPM2 rep1 / Multiple myeloma: 57.81% lost; not_flagged</title></circle>
+<circle cx="426.5" cy="357.3" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>GSC316 rep2 / Glioblastoma multiome: 62.63% lost; not_flagged</title></circle>
+<circle cx="675.3" cy="409.3" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MOLM-13 rep1 / Acute myeloid leukemia: 53.65% lost; not_flagged</title></circle>
+<circle cx="554.3" cy="368.6" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>COLO320-DM rep2 / Colorectal cancer: 60.68% lost; not_flagged</title></circle>
+<circle cx="763.6" cy="411.6" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>ST1387 rep1 / Rheumatoid arthritis: 53.26% lost; not_flagged</title></circle>
+<circle cx="675.9" cy="379.2" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>SUM185 rep1 / Breast cancer: 58.86% lost; not_flagged</title></circle>
+<circle cx="809.9" cy="316.8" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>ST1412 rep1 / Rheumatoid arthritis: 69.63% lost; not_flagged</title></circle>
+<circle cx="703.6" cy="295.4" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>T47D rep1 / Breast cancer: 73.33% lost; not_flagged</title></circle>
+<circle cx="814.1" cy="320.5" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>SUM1315 rep1 / Breast cancer: 69.00% lost; not_flagged</title></circle>
+<circle cx="840.7" cy="335.0" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>BT549 rep1 / Breast cancer: 66.48% lost; not_flagged</title></circle>
+<circle cx="496.7" cy="327.2" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>GSC316 rep1 / Glioblastoma multiome: 67.84% lost; not_flagged</title></circle>
+<circle cx="601.2" cy="284.3" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>COLO320-DM rep1 / Colorectal cancer: 75.24% lost; not_flagged</title></circle>
+<circle cx="856.5" cy="404.4" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>MDA436 rep1 / Breast cancer: 54.51% lost; not_flagged</title></circle>
+<circle cx="858.4" cy="383.5" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>BT549 rep2 / Breast cancer: 58.11% lost; not_flagged</title></circle>
+<circle cx="856.4" cy="376.4" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>HCC1395 rep1 / Breast cancer: 59.34% lost; not_flagged</title></circle>
+<circle cx="838.9" cy="368.3" r="4" fill="#999999" fill-opacity="0.82" stroke="white" stroke-width="1"><title>BT549 rep3 / Breast cancer: 60.74% lost; not_flagged</title></circle>
+<text x="612.3" y="712.0" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">MOLT4</text>
+<text x="866.4" y="549.1" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">ASPS-KY</text>
+<text x="588.4" y="163.9" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">MutuI</text>
+<text x="509.2" y="145.1" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">OVCAR3</text>
+<text x="279.2" y="181.3" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">MDA-MB-231</text>
+<text x="419.3" y="138.4" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">KK1</text>
+<text x="295.4" y="129.5" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">U87</text>
+<text x="256.1" y="129.0" font-family="Arial, sans-serif" font-size="10" text-anchor="end" fill="#333">SUM159</text>
+<text x="232.7" y="166.1" font-family="Arial, sans-serif" font-size="10" text-anchor="end" fill="#333">GIST-T1</text>
+<text x="734.5" y="462.7" font-family="Arial, sans-serif" font-size="10" text-anchor="start" fill="#333">SUM149</text>
+<text x="506.0" y="775" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">log10 untreated Ctrl BRD4 peak count</text>
+<text x="24" y="416.0" font-family="Arial, sans-serif" font-size="13" transform="rotate(-90 24 416.0)" text-anchor="middle">JQ1 percent lost vs Ctrl peaks</text>
+<text x="950" y="117" font-family="Arial, sans-serif" font-size="13" font-weight="700">Flags</text>
+<circle cx="957" cy="144" r="6" fill="#b3453d"/>
+<text x="972" y="148" font-family="Arial, sans-serif" font-size="12" fill="#333">Sensitive outlier</text>
+<circle cx="957" cy="168" r="6" fill="#287c71"/>
+<text x="972" y="172" font-family="Arial, sans-serif" font-size="12" fill="#333">Resistant outlier</text>
+<circle cx="957" cy="192" r="6" fill="#bf7a18"/>
+<text x="972" y="196" font-family="Arial, sans-serif" font-size="12" fill="#333">Variable replicate model</text>
+<circle cx="957" cy="216" r="6" fill="#999999"/>
+<text x="972" y="220" font-family="Arial, sans-serif" font-size="12" fill="#333">Not flagged</text>
+<text x="950" y="272" font-family="Arial, sans-serif" font-size="12" fill="#555">Labels show top-priority flagged pairs.</text>
+</svg>

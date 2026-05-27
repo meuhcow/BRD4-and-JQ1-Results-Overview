@@ -1,0 +1,6 @@
+regulatory_context	region_count	region_percent	mean_sample_count	median_sample_count	mean_cancer_type_count	median_cancer_type_count	mean_lost_peak_records	median_lost_peak_records	best_candidate_rank
+Distal enhancer-like	129	64.5	22.88	23.0	10.84	11.0	37.71	35.0	4
+Promoter-proximal	33	16.5	23.61	24.0	11.09	11.0	36.33	33.0	1
+Gene body non-promoter	22	11.0	23.82	23.5	11.05	11.0	41.59	41.5	3
+Intergenic near-gene	9	4.5	22.78	21.0	11.22	11.0	39.78	35.0	8
+Other	7	3.5	22.86	23.0	10.43	10.0	43.57	47.0	50

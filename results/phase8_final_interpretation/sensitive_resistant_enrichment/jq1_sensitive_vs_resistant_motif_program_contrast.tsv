@@ -1,0 +1,12 @@
+program	high_sensitivity_mean_score	low_sensitivity_mean_score	high_minus_low_score	high_best_motif	low_best_motif
+ER/AR/Nuclear receptor	81.5	0.0	81.5	THRb(NR)/Liver-NR1A2-ChIP-Seq(GSE52613)/Homer	
+Homeobox	81.5	0.0	81.5	Pitx1(Homeobox)/Chicken-Pitx1-ChIP-Seq(GSE38910)/Homer	
+MYC/MAX/bHLH	71.67	0.0	71.67	SCL(bHLH)/HPC7-Scl-ChIP-Seq(GSE13511)/Homer	
+ETS	65.33	0.0	65.33	E2A(bHLH),near_PU.1/Bcell-PU.1-ChIP-Seq(GSE21512)/Homer	
+Other	64.5	0.0	64.5	Tbx5(T-box)/HL1-Tbx5.biotin-ChIP-Seq(GSE21529)/Homer	
+STAT/IRF/immune	42.0	0.0	42.0	PU.1-IRF(ETS:IRF)/Bcell-PU.1-ChIP-Seq(GSE21512)/Homer	
+NF-kB/REL	32.5	0.0	32.5	NFkB2-p52(RHD)/U266-NFKB2-ChIP-seq(GSE230466)/Homer	
+FOX	30.0	0.0	30.0	Fox:Ebox(Forkhead,bHLH)/Panc1-Foxa2-ChIP-Seq(GSE47459)/Homer	
+RUNX	27.0	0.0	27.0	RUNX-AML(Runt)/CD4+-PolII-ChIP-Seq(Barski_et_al.)/Homer	
+AP-1/JUN/FOS	22.0	0.0	22.0	bZIP:IRF(bZIP,IRF)/Th17-BatF-ChIP-Seq(GSE39756)/Homer	
+GATA	16.0	0.0	16.0	GATA(Zf),IR3/iTreg-Gata3-ChIP-Seq(GSE20898)/Homer	
