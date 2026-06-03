@@ -103,6 +103,46 @@
       backdrop-filter: blur(10px);
     }
 
+    .tab-shell {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 12px clamp(16px, 4vw, 72px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 248, 251, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .tab-nav {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .tab-button {
+      flex: 0 0 auto;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: #3b4453;
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 760;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .tab-button[aria-selected="true"] {
+      border-color: #315f9f;
+      background: #edf4ff;
+      color: #244d85;
+    }
+
     main {
       display: grid;
       gap: 34px;
@@ -112,6 +152,10 @@
     section {
       width: min(1180px, 100%);
       margin: 0 auto;
+    }
+
+    .tab-panel[hidden] {
+      display: none;
     }
 
     .section-heading {
@@ -295,6 +339,14 @@
       text-align: right;
     }
 
+    #pi-interpretation th,
+    #pi-interpretation td,
+    #pi-interpretation td:last-child,
+    #pi-interpretation th:last-child {
+      text-align: left;
+      vertical-align: middle;
+    }
+
     .two-col {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -423,16 +475,29 @@
         robustness checks, candidate prioritization, and the final candidate-region interpretation.
       </p>
       <div class="hero-actions" aria-label="Page sections">
-        <a class="button" href="#phases">View workflow</a>
-        <a class="button" href="#final-results">See final results</a>
-        <a class="button" href="#additional-analyses">Explore added analyses</a>
-        <a class="button" href="#figures">Open figures</a>
+        <a class="button" href="#tab-workflow" data-tab-link="workflow">View workflow</a>
+        <a class="button" href="#tab-response" data-tab-link="response">See response results</a>
+        <a class="button" href="#tab-analyses" data-tab-link="analyses">Explore deep dives</a>
+        <a class="button" href="#tab-pi" data-tab-link="pi">Biological interpretation</a>
+        <a class="button" href="#tab-figures" data-tab-link="figures">Open figures</a>
       </div>
     </div>
   </header>
 
+  <nav class="tab-shell" aria-label="Result categories">
+    <div class="tab-nav" role="tablist">
+      <button class="tab-button" type="button" role="tab" aria-selected="true" data-tab-button="overview" id="tab-overview">Overview</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="workflow" id="tab-workflow">Workflow</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="response" id="tab-response">Response</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="analyses" id="tab-analyses">Deep Dives</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="candidates" id="tab-candidates">Candidate Genes</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="pi" id="tab-pi">Biological Interpretation</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="figures" id="tab-figures">Figures</button>
+    </div>
+  </nav>
+
   <main>
-    <section aria-labelledby="snapshot-title">
+    <section class="tab-panel" data-tab-panel="overview" aria-labelledby="snapshot-title">
       <div class="section-heading">
         <h2 id="snapshot-title">Project Snapshot</h2>
         <p class="section-note">The final interpreted cohort uses all selected matched BRD4 Ctrl/JQ1 pairs, with middle-phase harmonized outputs pulled from the internship results folder.</p>
@@ -457,10 +522,9 @@
       </div>
     </section>
 
-    <section id="phases" aria-labelledby="phases-title">
+    <section id="phases" class="tab-panel" data-tab-panel="workflow" aria-labelledby="phases-title" hidden>
       <div class="section-heading">
         <h2 id="phases-title">Workflow Timeline</h2>
-        <p class="section-note">The middle workflow outputs come from <code>/Users/meuh_cow/Documents/internship/results</code>; motif/pathway and final interpretation outputs are in this project folder.</p>
       </div>
       <div class="phase-grid">
         <article class="phase-card">
@@ -506,7 +570,7 @@
       </div>
     </section>
 
-    <section aria-labelledby="middle-title">
+    <section class="tab-panel" data-tab-panel="workflow" aria-labelledby="middle-title" hidden>
       <div class="section-heading">
         <h2 id="middle-title">Middle-Phase Results</h2>
         <p class="section-note">These are the extra results from the internship folder that complete the story between the initial audit and the final interpretation.</p>
@@ -585,7 +649,7 @@
       </div>
     </section>
 
-    <section id="final-results" aria-labelledby="final-title">
+    <section id="final-results" class="tab-panel" data-tab-panel="response" aria-labelledby="final-title" hidden>
       <div class="section-heading">
         <h2 id="final-title">Final Results</h2>
         <p class="section-note">The strongest signals are uneven across cancers: baseline BRD4 burden and JQ1 loss do not rank the same disease contexts.</p>
@@ -635,10 +699,10 @@
       </div>
     </section>
 
-    <section id="additional-analyses" aria-labelledby="additional-title">
+    <section id="additional-analyses" class="tab-panel" data-tab-panel="analyses" aria-labelledby="additional-title" hidden>
       <div class="section-heading">
         <h2 id="additional-title">Additional Analyses</h2>
-        <p class="section-note">Eight follow-up analyses test robustness, explain heterogeneity, and turn the region-level outputs into interpretable candidate priorities.</p>
+        <p class="section-note">Twelve follow-up analyses test robustness, explain heterogeneity, and turn the region-level outputs into interpretable candidate priorities and cancer-process hypotheses.</p>
       </div>
       <div class="analysis-grid">
         <article class="analysis-card">
@@ -720,10 +784,183 @@
             <a class="text-link" href="results/phase8_final_interpretation/lost_vs_retained_motif_enrichment/jq1_lost_vs_retained_motif_program_summary.tsv">Summary</a>
           </div>
         </article>
+
+        <article class="analysis-card">
+          <h3>9. BRD4 BioGRID interactors</h3>
+          <p>Direct BRD4 interactors overlapping motif-linked biology include <strong>MYC</strong>, AR, JUN, NR2F2, STAT1, STAT3, and ZNF711, with CDK9, CCNT1, MED1, EP300, BRD2, and BRD3 as supporting transcriptional cofactors.</p>
+          <div class="tag-row"><span class="tag">1,625 partners</span><span class="tag">7 motif-linked</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/biogrid_brd4_motif_interactors/brd4_motif_linked_interactors_summary.tsv">Summary</a>
+            <a class="text-link" href="results/phase8_final_interpretation/biogrid_brd4_motif_interactors/biogrid_brd4_focus_interaction_evidence.tsv">Evidence</a>
+          </div>
+        </article>
+
+        <article class="analysis-card">
+          <h3>10. AR versus ER context</h3>
+          <p>The nuclear-receptor motif signal is broad but currently points more toward AR-like half-site biology than a clear ER-specific signal. BioGRID supports BRD4-AR and BRD4-ESR2 interactions, with no BRD4-ESR1 record in the filtered table.</p>
+          <div class="tag-row"><span class="tag">AR-like signal</span><span class="tag">ER not clear</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/biogrid_brd4_motif_interactors/nuclear_receptor_ar_er_classification.tsv">Classification</a>
+          </div>
+        </article>
+
+        <article class="analysis-card">
+          <h3>11. Common target GO</h3>
+          <p>Pan-cancer common BRD4/JQ1-vulnerable genes enrich for transcription/chromatin regulation, cell cycle, RNA processing, protein turnover, immune signaling, migration, and VEGFA-associated angiogenesis.</p>
+          <div class="tag-row"><span class="tag">pan-cancer function</span><span class="tag">GO + Reactome</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/common_target_gene_ontology/common_target_go_summary_for_pi.md">PI summary</a>
+            <a class="text-link" href="results/phase8_final_interpretation/common_target_gene_ontology/common_target_cancer_theme_summary.tsv">Themes</a>
+          </div>
+        </article>
+
+        <article class="analysis-card">
+          <h3>12. Glioblastoma focus</h3>
+          <p>Glioblastoma BRD4/JQ1-lost target genes emphasize neural development, cell projection and invasion, PI3K-AKT/WNT/growth-factor signaling, hypoxia/vascular biology, p53/senescence, DNA damage response, and inflammation.</p>
+          <div class="tag-row"><span class="tag">6,245 coding genes</span><span class="tag">GBM-specific</span></div>
+          <div class="link-row">
+            <a class="text-link" href="results/phase8_final_interpretation/glioblastoma_gene_ontology/glioblastoma_go_summary_for_pi.md">PI summary</a>
+            <a class="text-link" href="results/phase8_final_interpretation/glioblastoma_gene_ontology/top25_glioblastoma_vulnerable_gene_process_annotations.tsv">Top genes</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section aria-labelledby="common-peaks-title">
+    <section id="pi-interpretation" class="tab-panel" data-tab-panel="pi" aria-label="Biological interpretation" hidden>
+      <div class="section-heading">
+        <p class="section-note">These are the newest biological interpretations: BRD4 interaction partners, nuclear-receptor context, top vulnerable-gene function, pan-cancer GO, and the glioblastoma-specific model.</p>
+      </div>
+
+      <div class="stacked-panels">
+        <article class="panel">
+          <div class="panel-body">
+            <h3>BRD4 interactors linked to enriched motif programs</h3>
+            <p>BioGRID interaction evidence connects BRD4 to motif-linked regulators including MYC, AR, JUN, NR2F2, STAT1, STAT3, and ZNF711. Functionally, these point toward oncogenic transcription, nuclear-receptor signaling, AP-1/inflammatory response, STAT cytokine signaling, and zinc-finger regulatory programs. Supporting BRD4-associated cofactors such as CDK9, CCNT1, MED1, EP300, BRD2, and BRD3 reinforce a transcriptional elongation/enhancer-control model.</p>
+            <div class="link-row">
+              <a class="text-link" href="results/phase8_final_interpretation/biogrid_brd4_motif_interactors/brd4_motif_linked_interactors_summary.tsv">Interactor summary</a>
+              <a class="text-link" href="results/phase8_final_interpretation/biogrid_brd4_motif_interactors/README.md">Notes</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel table-wrap">
+          <table>
+            <thead>
+              <tr><th>BRD4 interactor</th><th>Motif/program link</th><th>Main function</th><th>Tumor interpretation</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>MYC</td><td>MYC/MAX/bHLH</td><td>Growth, metabolism, proliferation, and cell-cycle transcription</td><td>Supports the idea that BRD4 helps maintain oncogenic growth and cell-cycle programs.</td></tr>
+              <tr><td>AR</td><td>AR-like nuclear receptor half-site</td><td>Androgen receptor-dependent transcription</td><td>Links BRD4 to a nuclear-receptor-like program with AR support, especially where AR-like motifs are enriched.</td></tr>
+              <tr><td>NR2F2</td><td>COUP-TF / nuclear receptor motif</td><td>Developmental and nuclear receptor transcriptional regulation</td><td>May contribute to cell identity, differentiation state, and tumor plasticity.</td></tr>
+              <tr><td>JUN</td><td>AP-1 motif program</td><td>Stress-response, inflammatory, proliferation, and migration signaling</td><td>Suggests BRD4 may cooperate with AP-1 programs that support tumor signaling and invasion.</td></tr>
+              <tr><td>STAT1 / STAT3</td><td>STAT motif programs</td><td>Cytokine, immune, inflammatory, and survival signaling</td><td>STAT3 is especially relevant to tumor survival, inflammatory signaling, and microenvironment communication.</td></tr>
+              <tr><td>ZNF711</td><td>Zinc-finger motif</td><td>Transcriptional regulation</td><td>Supports a zinc-finger regulatory link, although the tumor mechanism is less defined.</td></tr>
+              <tr><td>CDK9 / CCNT1</td><td>Transcription elongation support</td><td>P-TEFb machinery that releases paused RNA polymerase II</td><td>Explains how BRD4 can promote active transcription at vulnerable tumor programs.</td></tr>
+              <tr><td>MED1 / EP300</td><td>Enhancer and acetylated-chromatin support</td><td>Mediator coactivation and histone acetylation</td><td>Connects BRD4 to enhancer/super-enhancer activity and chromatin activation.</td></tr>
+              <tr><td>BRD2 / BRD3</td><td>BET-family chromatin regulation</td><td>Related bromodomain proteins that read acetylated chromatin</td><td>Suggests BRD4 may act within a broader BET-family chromatin-regulatory network.</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Nuclear receptor signal: AR-like, not clearly ER-specific</h3>
+            <p>The motif label ER/AR/nuclear receptor should be interpreted as a broad nuclear-receptor-like program. The strongest evidence supports AR-like half-site enrichment and direct BRD4-AR interaction evidence. ER-specific ERE/ERa/ERb motifs are not strong top signals in the current motif outputs, so the safest wording is that JQ1-lost BRD4 regions carry a broad nuclear-receptor-like signal with AR-like support, but not a clear ER-specific signature.</p>
+            <div class="link-row">
+              <a class="text-link" href="results/phase8_final_interpretation/biogrid_brd4_motif_interactors/nuclear_receptor_ar_er_classification.tsv">AR/ER classification</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel table-wrap">
+          <table>
+            <thead>
+              <tr><th>Interpretation layer</th><th>Main processes</th><th>Cancer relevance</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Top vulnerable genes</td>
+                <td>E2F3 cell cycle, WEE1 checkpoint control, VEGFA angiogenesis, IQGAP1/Rho-like signaling, KAT5 chromatin acetylation, SRPK2 RNA splicing/signaling</td>
+                <td>Supports proliferation, vascular growth, chromatin regulation, RNA processing, and survival signaling as BRD4/JQ1-vulnerable tumor functions.</td>
+              </tr>
+              <tr>
+                <td>Pan-cancer common GO</td>
+                <td>Transcription/chromatin, cell cycle, RNA processing/translation, ubiquitin-proteasome pathways, immune/inflammatory activation, adhesion/migration, VEGFA-associated vascular signaling</td>
+                <td>Suggests BRD4 maintains shared tumor programs needed for proliferation, stress tolerance, plasticity, and microenvironment communication.</td>
+              </tr>
+              <tr>
+                <td>Glioblastoma GO</td>
+                <td>Neural development, cell projection/axon guidance, invasion/adhesion, PI3K-AKT/WNT/growth-factor signaling, hypoxia/vascular biology, DNA damage response, inflammation</td>
+                <td>Supports a GBM model where BRD4 helps maintain neural-like plasticity, diffuse invasion, therapy-stress tolerance, and aggressive tumor expansion.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel table-wrap">
+          <table>
+            <thead>
+              <tr><th>Top vulnerable gene(s)</th><th>Process/function</th><th>Why it matters for tumors</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>E2F3</td><td>Cell-cycle and proliferation transcription factor</td><td>Can support tumor-cell division by activating genes needed for cell-cycle progression.</td></tr>
+              <tr><td>WEE1</td><td>G2/M checkpoint kinase</td><td>Helps tumor cells tolerate replication stress and DNA damage before entering mitosis.</td></tr>
+              <tr><td>VEGFA</td><td>Angiogenesis and vascular signaling</td><td>Promotes new blood-vessel formation, helping tumors obtain oxygen and nutrients.</td></tr>
+              <tr><td>KAT5</td><td>Chromatin acetylation and DNA damage response</td><td>Connects BRD4 vulnerability to chromatin regulation, transcriptional plasticity, and repair signaling.</td></tr>
+              <tr><td>TARBP1 / PAIP1</td><td>RNA binding, translation, and RNA/protein production</td><td>May support the high RNA and protein production demands of growing tumor cells.</td></tr>
+              <tr><td>SRPK2 / SCAF11</td><td>RNA splicing and RNA processing</td><td>Suggests BRD4-vulnerable regions may influence transcript processing and tumor-cell regulatory flexibility.</td></tr>
+              <tr><td>UBE2R2 / FBXL5</td><td>Ubiquitin/protein turnover and iron homeostasis</td><td>Protein degradation and iron balance can affect stress adaptation and tumor-cell fitness.</td></tr>
+              <tr><td>IQGAP1 / EPS8L3 / MYL12B</td><td>Signaling, cytoskeleton, and migration</td><td>Can support cell movement, invasion, and cytoskeletal remodeling.</td></tr>
+              <tr><td>ZBTB7B / PRF1</td><td>Immune-lineage or immune/cytotoxic context</td><td>May reflect immune-related regulatory programs or tumor-microenvironment-linked biology.</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel table-wrap">
+          <table>
+            <thead>
+              <tr><th>GBM enriched process</th><th>Best enriched term</th><th>Evidence strength</th><th>Why it matters in glioblastoma</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Invasion, adhesion, and migration</td><td>Cell morphogenesis</td><td>p=2.28e-09; 305 target genes</td><td>Suggests BRD4 may support cell-shape changes, adhesion, and diffuse brain infiltration.</td></tr>
+              <tr><td>Neural development and stem-like plasticity</td><td>Nervous system development</td><td>p=8.80e-09; 844 target genes</td><td>GBM cells often reuse neural developmental states to maintain plasticity and therapy tolerance.</td></tr>
+              <tr><td>Growth-factor and oncogenic signaling</td><td>Pathways in cancer</td><td>p=5.44e-06; 180 target genes</td><td>Includes PI3K-AKT, WNT, EGFR/PDGF-related signaling that can support survival and treatment resistance.</td></tr>
+              <tr><td>Hypoxia and vascular biology</td><td>Cellular response to hypoxia</td><td>p=5.80e-05; 68 target genes</td><td>Fits glioblastoma because GBM is highly vascular and often depends on hypoxia/angiogenesis programs.</td></tr>
+              <tr><td>Cell cycle, senescence, and p53 control</td><td>Cell population proliferation</td><td>p=1.09e-04; 291 target genes</td><td>Supports proliferative growth and checkpoint adaptation in GBM cells.</td></tr>
+              <tr><td>DNA damage and stress response</td><td>DNA Damage Response (ATM dependent)</td><td>p=2.47e-04; 60 target genes</td><td>May help GBM cells tolerate replication stress, radiation-associated damage, and other therapies.</td></tr>
+              <tr><td>Immune and inflammatory signaling</td><td>DAP12 interactions</td><td>p=5.00e-04; 153 target genes</td><td>Suggests BRD4 may influence inflammatory signaling and tumor-microenvironment communication.</td></tr>
+              <tr><td>Chromatin and transcriptional regulation</td><td>Regulation of miRNA transcription</td><td>p=6.22e-04; 40 target genes</td><td>Matches BRD4's role as a chromatin reader supporting enhancer-driven oncogenic transcription.</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel table-wrap">
+          <table>
+            <thead>
+              <tr><th>GBM candidate</th><th>Process/function</th><th>Interpretation</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>CDCP1</td><td>Adhesion, invasion, survival signaling</td><td>Strong GBM-relevant candidate because adhesion and survival signaling can support invasive tumor behavior.</td></tr>
+              <tr><td>PREX1</td><td>PI3K-RAC signaling and migration</td><td>Connects BRD4-vulnerable regions to motility, invasion, and survival signaling.</td></tr>
+              <tr><td>MEF2C / NFIB</td><td>Neural and glial transcriptional regulation</td><td>Supports the model that BRD4 maintains neural-like GBM cell-state plasticity.</td></tr>
+              <tr><td>SPIDR / RAD51B</td><td>Homologous recombination DNA repair</td><td>Links GBM vulnerability to DNA repair capacity and potential tolerance of radiation or replication stress.</td></tr>
+              <tr><td>TRIO / MICAL2</td><td>Rho/Rac and actin remodeling</td><td>Fits GBM invasion because cytoskeletal remodeling controls migration and brain-tissue infiltration.</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="callout">
+          <h2>Updated Working Model</h2>
+          <p>
+            BRD4 appears to support tumor growth by maintaining enhancer-linked transcriptional programs for proliferation, cell-cycle control,
+            angiogenesis, RNA/protein regulation, and stress tolerance. In glioblastoma specifically, the signal shifts toward neural-like plasticity,
+            cell projection and invasion, growth-factor signaling, hypoxia/vascular biology, DNA damage response, and inflammatory microenvironment signaling.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="tab-panel" data-tab-panel="candidates" aria-labelledby="common-peaks-title" hidden>
       <div class="section-heading">
         <h2 id="common-peaks-title">Common JQ1-Lost Peaks Across Cancer Types</h2>
         <p class="section-note">Pan-cancer shared vulnerable regions ranked by the number of cancer types in which the same hg19 region loses BRD4 after JQ1 treatment.</p>
@@ -753,7 +990,7 @@
       </p>
     </section>
 
-    <section aria-labelledby="candidate-title">
+    <section class="tab-panel" data-tab-panel="candidates" aria-labelledby="candidate-title" hidden>
       <div class="section-heading">
         <h2 id="candidate-title">Recurrent Vulnerable Regions</h2>
         <p class="section-note">Candidate loci concentrate near genes with plausible cancer biology, regulatory, cell-cycle, chromatin, RNA-processing, or signaling relevance.</p>
@@ -777,7 +1014,7 @@
       </div>
     </section>
 
-    <section id="figures" aria-labelledby="figures-title">
+    <section id="figures" class="tab-panel" data-tab-panel="figures" aria-labelledby="figures-title" hidden>
       <div class="section-heading">
         <h2 id="figures-title">Figure Highlights</h2>
         <p class="section-note">These images are loaded directly from the final output folders, keeping the page tied to the generated analysis files.</p>
@@ -894,13 +1131,14 @@
       </div>
     </section>
 
-    <section class="callout" aria-labelledby="takeaway-title">
+    <section class="callout tab-panel" data-tab-panel="overview" aria-labelledby="takeaway-title">
       <h2 id="takeaway-title">Main Takeaway</h2>
       <p>
         BRD4 binding landscapes differ substantially across cancer types, and JQ1 response is not uniform.
         The added analyses strengthen that conclusion: baseline peak burden does not simply predict response,
         most vulnerable regions are cancer-type-specific, top candidates can be prioritized around E2F3/TARBP1/FBXL5-like loci,
-        and sensitive contexts carry richer detected regulatory motif programs.
+        sensitive contexts carry richer detected regulatory motif programs, and glioblastoma-specific targets highlight neural-like plasticity,
+        invasion, survival signaling, DNA damage response, hypoxia/vascular biology, and inflammation.
       </p>
     </section>
 
@@ -908,5 +1146,70 @@
       Source files include <code>docs/phase1_data_audit_summary.md</code>, <code>results/phase7_FINAL_README.md</code>, <code>results/phase8_final_interpretation/phase8_written_interpretation_draft.md</code>, and the Phase VIII analysis subfolders linked above.
     </footer>
   </main>
+
+  <script>
+    const tabButtons = Array.from(document.querySelectorAll("[data-tab-button]"));
+    const tabPanels = Array.from(document.querySelectorAll("[data-tab-panel]"));
+    const tabLinks = Array.from(document.querySelectorAll("[data-tab-link]"));
+
+    function activateTab(tabName, options = {}) {
+      const tab = tabButtons.some((button) => button.dataset.tabButton === tabName) ? tabName : "overview";
+
+      tabButtons.forEach((button) => {
+        button.setAttribute("aria-selected", String(button.dataset.tabButton === tab));
+      });
+
+      tabPanels.forEach((panel) => {
+        panel.hidden = panel.dataset.tabPanel !== tab;
+      });
+
+      if (options.updateHash) {
+        history.replaceState(null, "", `#tab-${tab}`);
+      }
+
+      if (options.scroll) {
+        document.querySelector(".tab-shell").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    function activateFromHash() {
+      const hash = window.location.hash.replace("#", "");
+      if (!hash) {
+        activateTab("overview");
+        return;
+      }
+
+      if (hash.startsWith("tab-")) {
+        activateTab(hash.replace("tab-", ""));
+        return;
+      }
+
+      const target = document.getElementById(hash);
+      const panel = target && target.closest("[data-tab-panel]");
+      if (panel) {
+        activateTab(panel.dataset.tabPanel);
+        requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+        return;
+      }
+
+      activateTab("overview");
+    }
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        activateTab(button.dataset.tabButton, { updateHash: true, scroll: true });
+      });
+    });
+
+    tabLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        activateTab(link.dataset.tabLink, { updateHash: true, scroll: true });
+      });
+    });
+
+    window.addEventListener("hashchange", activateFromHash);
+    activateFromHash();
+  </script>
 </body>
 </html>
