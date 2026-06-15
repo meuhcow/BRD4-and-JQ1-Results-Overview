@@ -834,6 +834,70 @@
       <div class="stacked-panels">
         <article class="panel">
           <div class="panel-body">
+            <h3>Replicate robustness interpretation</h3>
+            <p>Replicate robustness was assessed using percent BRD4 peak loss after JQ1 treatment. A repeated model was labeled high consistency when replicate spread was <=5 percentage points, moderate when spread was <=15 percentage points, and variable when spread was >15 percentage points. This separates true replicate consistency within the same model from broader cancer-type heterogeneity across different models.</p>
+            <div class="tag-row"><span class="tag">high <=5 pp</span><span class="tag">moderate <=15 pp</span><span class="tag">variable >15 pp</span></div>
+          </div>
+        </article>
+
+        <article class="panel table-wrap">
+          <table>
+            <thead>
+              <tr><th>Model</th><th>Cancer type</th><th>Replicates</th><th>% lost values</th><th>Range</th><th>Robustness</th><th>Interpretation</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>U87</td><td>Glioblastoma multiome</td><td>2</td><td>99.90, 99.55</td><td>0.35 pp</td><td>High</td><td>Very robust JQ1-sensitive BRD4-loss response within this GBM model.</td></tr>
+              <tr><td>OS-RC-2</td><td>Clear cell renal cell carcinoma</td><td>2</td><td>87.25, 82.59</td><td>4.66 pp</td><td>High</td><td>Robust high BRD4-loss response across replicates.</td></tr>
+              <tr><td>GSC316</td><td>Glioblastoma multiome</td><td>2</td><td>67.84, 62.63</td><td>5.21 pp</td><td>Moderate</td><td>Moderately robust response; lower JQ1 sensitivity than U87 but internally consistent.</td></tr>
+              <tr><td>BT549</td><td>Breast cancer</td><td>3</td><td>66.48, 58.11, 60.74</td><td>8.37 pp</td><td>Moderate</td><td>Replicates support a moderate, reproducible JQ1-loss response.</td></tr>
+              <tr><td>MutuI</td><td>Burkitt's lymphoma</td><td>2</td><td>95.52, 82.01</td><td>13.51 pp</td><td>Moderate</td><td>Consistently high response, but with noticeable replicate spread.</td></tr>
+              <tr><td>COLO320-DM</td><td>Colorectal cancer</td><td>2</td><td>75.24, 60.68</td><td>14.56 pp</td><td>Moderate</td><td>Moderate reproducibility; close to the variability cutoff.</td></tr>
+              <tr><td>PC3</td><td>Prostate cancer</td><td>2</td><td>66.31, 81.57</td><td>15.26 pp</td><td>Variable, borderline</td><td>Just above the moderate cutoff; should be interpreted cautiously.</td></tr>
+              <tr><td>COLO320-HSR</td><td>Colorectal cancer</td><td>2</td><td>54.89, 71.14</td><td>16.25 pp</td><td>Variable</td><td>Replicates show meaningful spread, suggesting model-level variability.</td></tr>
+              <tr><td>MDA-MB-231</td><td>Breast cancer</td><td>2</td><td>96.14, 65.71</td><td>30.43 pp</td><td>Variable</td><td>Least robust repeated model; strong replicate heterogeneity.</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel table-wrap">
+          <table>
+            <thead>
+              <tr><th>Cancer type</th><th>Matched pairs</th><th>Models represented</th><th>% lost range</th><th>Label</th><th>Interpretation</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Clear cell renal cell carcinoma</td><td>2</td><td>OS-RC-2</td><td>4.66 pp</td><td>High</td><td>Robust, but based on one replicated model.</td></tr>
+              <tr><td>Burkitt's lymphoma</td><td>3</td><td>MutuI, Raji</td><td>13.51 pp</td><td>Moderate</td><td>Fairly consistent high JQ1 loss across available pairs.</td></tr>
+              <tr><td>Prostate cancer</td><td>2</td><td>PC3</td><td>15.26 pp</td><td>Variable, borderline</td><td>Slightly above the moderate cutoff; interpret as near-moderate but not fully robust.</td></tr>
+              <tr><td>Colorectal cancer</td><td>4</td><td>COLO320-DM, COLO320-HSR</td><td>20.35 pp</td><td>Variable</td><td>Different colorectal models show response heterogeneity.</td></tr>
+              <tr><td>Multiple myeloma</td><td>2</td><td>LP-1, OPM2</td><td>25.53 pp</td><td>Variable</td><td>Response differs across available myeloma models.</td></tr>
+              <tr><td>Acute myeloid leukemia</td><td>2</td><td>MOLM-13, OCI-AML3</td><td>37.23 pp</td><td>Variable</td><td>Large model-to-model difference in JQ1-associated BRD4 loss.</td></tr>
+              <tr><td>Glioblastoma multiome</td><td>4</td><td>GSC316, U87</td><td>37.27 pp</td><td>Variable</td><td>Each GBM model is internally robust/moderate, but U87 and GSC316 differ strongly from each other.</td></tr>
+              <tr><td>Breast cancer</td><td>14</td><td>11 models</td><td>56.94 pp</td><td>Variable</td><td>Strong cancer-type heterogeneity across breast cancer models.</td></tr>
+              <tr><td>Rheumatoid arthritis</td><td>2</td><td>ST1387, ST1412</td><td>16.37 pp</td><td>Variable</td><td>Slightly above the moderate cutoff, suggesting non-uniform response.</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel table-wrap">
+          <table>
+            <thead>
+              <tr><th>Cancer type</th><th>Model</th><th>% lost</th><th>Replicate interpretation</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>ATLL</td><td>KK1</td><td>98.36</td><td>Strong response, but only one matched pair; replicate robustness cannot be assessed.</td></tr>
+              <tr><td>Gastrointestinal stromal tumor</td><td>GIST-T1</td><td>98.77</td><td>Strong response, but only one matched pair.</td></tr>
+              <tr><td>Ovarian cancer</td><td>OVCAR3</td><td>97.21</td><td>Strong response, but only one matched pair.</td></tr>
+              <tr><td>Colon cancer</td><td>HCT116</td><td>85.53</td><td>High response, but no replicate support.</td></tr>
+              <tr><td>Neuroblastoma</td><td>SK-N-BE2-C</td><td>75.44</td><td>Moderate-high response, but no replicate support.</td></tr>
+              <tr><td>Acute promyelocytic leukemia</td><td>NB4</td><td>61.96</td><td>Moderate response, but no replicate support.</td></tr>
+              <tr><td>Alveolar soft part sarcoma</td><td>ASPS-KY</td><td>27.79</td><td>Low response, but no replicate support.</td></tr>
+              <tr><td>T-ALL</td><td>MOLT4</td><td>0.00</td><td>Retained-binding/resistant example, but no replicate support.</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="panel">
+          <div class="panel-body">
             <h3>BRD4 interactors linked to enriched motif programs</h3>
             <p>BioGRID interaction evidence connects BRD4 to motif-linked regulators including MYC, AR, JUN, NR2F2, STAT1, STAT3, and ZNF711. Functionally, these point toward oncogenic transcription, nuclear-receptor signaling, AP-1/inflammatory response, STAT cytokine signaling, and zinc-finger regulatory programs. Supporting BRD4-associated cofactors such as CDK9, CCNT1, MED1, EP300, BRD2, and BRD3 reinforce a transcriptional elongation/enhancer-control model.</p>
             <div class="link-row">
@@ -1213,4 +1277,3 @@
   </script>
 </body>
 </html>
-
