@@ -385,6 +385,67 @@
       color: var(--ink);
     }
 
+    .rna-layout {
+      display: grid;
+      gap: 18px;
+    }
+
+    .rna-summary {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .rna-figure-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .rna-figure-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .rna-figure-card .figure {
+      padding: 12px;
+    }
+
+    .rna-explanation {
+      display: grid;
+      gap: 10px;
+      padding: 18px;
+    }
+
+    .rna-explanation h3 {
+      margin: 0;
+      font-size: 1.12rem;
+    }
+
+    .rna-explanation p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .rna-explanation ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .rna-explanation li + li {
+      margin-top: 6px;
+    }
+
+    .mini-table td:last-child,
+    .mini-table th:last-child {
+      text-align: left;
+    }
+
     .link-row {
       display: flex;
       flex-wrap: wrap;
@@ -439,7 +500,9 @@
 
       .story-band,
       .two-col,
-      .analysis-grid {
+      .analysis-grid,
+      .rna-summary,
+      .rna-figure-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -492,6 +555,7 @@
       <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="analyses" id="tab-analyses">Deep Dives</button>
       <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="candidates" id="tab-candidates">Candidate Genes</button>
       <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="pi" id="tab-pi">Biological Interpretation</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="rnaseq" id="tab-rnaseq">RNA-seq Analysis</button>
       <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab-button="figures" id="tab-figures">Figures</button>
     </div>
   </nav>
@@ -1078,6 +1142,168 @@
       </div>
     </section>
 
+    <section id="rnaseq-analysis" class="tab-panel" data-tab-panel="rnaseq" aria-labelledby="rnaseq-title" hidden>
+      <div class="section-heading">
+        <h2 id="rnaseq-title">RNA-seq Analysis</h2>
+        <p class="section-note">CAGE/RNA expression data from GSE178471 were analyzed with DESeq2 to test the JQ1 transcriptional response while accounting for cell-line identity.</p>
+      </div>
+
+      <div class="rna-layout">
+        <div class="metric-grid">
+          <div class="metric">
+            <strong>15</strong>
+            <span>DMSO/JQ1 samples used in the main contrast</span>
+          </div>
+          <div class="metric">
+            <strong>20,685</strong>
+            <span>genes/features tested after filtering</span>
+          </div>
+          <div class="metric">
+            <strong>962</strong>
+            <span>significant genes at FDR &lt; 0.05 and |log2FC| &gt;= 1</span>
+          </div>
+          <div class="metric">
+            <strong>752</strong>
+            <span>genes downregulated after JQ1 treatment</span>
+          </div>
+        </div>
+
+        <div class="rna-summary">
+          <article class="panel">
+            <div class="panel-body">
+              <h3>Analysis design</h3>
+              <p>
+                The differential expression model was <code>~ cell_line + condition</code>.
+                This controls for baseline differences between C13NJ, GSC316, and U87 before estimating the JQ1 effect.
+              </p>
+            </div>
+            <div class="table-wrap">
+              <table class="mini-table">
+                <thead>
+                  <tr>
+                    <th>Cell line</th>
+                    <th>Control</th>
+                    <th>JQ1</th>
+                    <th>Role</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>C13NJ</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>Microglia / non-cancer reference model</td>
+                  </tr>
+                  <tr>
+                    <td>GSC316</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>Glioblastoma stem-cell model overlapping the ChIP-seq work</td>
+                  </tr>
+                  <tr>
+                    <td>U87</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>Glioblastoma cell-line model overlapping the ChIP-seq work</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-body">
+              <h3>Main interpretation</h3>
+              <p>
+                JQ1 produces a broad transcriptional response, with many more genes reduced than increased.
+                This supports the BRD4 inhibitor model: genes that depend on BRD4-associated regulatory activity are expected to lose expression after JQ1.
+              </p>
+              <div class="tag-row">
+                <span class="tag">210 up in JQ1</span>
+                <span class="tag">752 down in JQ1</span>
+                <span class="tag">DESeq2 contrast: JQ1 vs DMSO</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rna-figure-grid">
+          <article class="rna-figure-card">
+            <div class="rna-explanation">
+              <h3>PCA: sample structure</h3>
+              <p>The PCA summarizes the strongest expression-pattern differences between samples.</p>
+              <ul>
+                <li>Color marks treatment: control/DMSO versus JQ1.</li>
+                <li>Shape marks cell line: C13NJ, GSC316, or U87.</li>
+                <li>PC1 explains 66.7% of the variation and PC2 explains 30.2%.</li>
+                <li>Cell-line identity dominates the expression landscape, which is why the model controls for cell line.</li>
+              </ul>
+            </div>
+            <div class="figure">
+              <img src="webpage_assets/rnaseq/pretty_pca.png" alt="PCA plot of variance-stabilized RNA expression samples colored by treatment and shaped by cell line">
+            </div>
+          </article>
+
+          <article class="rna-figure-card">
+            <div class="rna-explanation">
+              <h3>Volcano plot: strongest JQ1 responses</h3>
+              <p>The volcano plot shows effect size and statistical support for every tested gene.</p>
+              <ul>
+                <li>Left-side blue genes are significantly lower after JQ1.</li>
+                <li>Right-side red genes are significantly higher after JQ1.</li>
+                <li>The vertical dashed lines mark two-fold change thresholds.</li>
+                <li>The large blue side shows that repression is the dominant response.</li>
+              </ul>
+            </div>
+            <div class="figure">
+              <img src="webpage_assets/rnaseq/pretty_volcano.png" alt="Volcano plot of DESeq2 JQ1 versus control results showing downregulated and upregulated genes">
+            </div>
+          </article>
+
+          <article class="rna-figure-card">
+            <div class="rna-explanation">
+              <h3>MA plot: expression level versus response</h3>
+              <p>The MA plot checks whether differential expression is concentrated in weakly expressed genes or spread across expression levels.</p>
+              <ul>
+                <li>The x-axis is average normalized expression.</li>
+                <li>The y-axis is log2 fold change after JQ1.</li>
+                <li>Significant genes appear across a broad expression range.</li>
+                <li>This supports a real transcriptional response rather than only low-count noise.</li>
+              </ul>
+            </div>
+            <div class="figure">
+              <img src="webpage_assets/rnaseq/pretty_ma_plot.png" alt="MA plot showing mean expression versus JQ1 log2 fold change for DESeq2 results">
+            </div>
+          </article>
+
+          <article class="rna-figure-card">
+            <div class="rna-explanation">
+              <h3>Heatmap: top JQ1-responsive genes</h3>
+              <p>The heatmap shows expression patterns for the most significant JQ1-responsive genes.</p>
+              <ul>
+                <li>Rows are top genes and columns are samples.</li>
+                <li>Red means higher relative expression for that gene; blue means lower relative expression.</li>
+                <li>Samples are grouped by cell line so treatment shifts can be read within each model.</li>
+                <li>Genes with consistent blue shifts in JQ1 are strong candidates for JQ1-sensitive expression programs.</li>
+              </ul>
+            </div>
+            <div class="figure">
+              <img src="webpage_assets/rnaseq/pretty_top_genes_heatmap.png" alt="Heatmap of top JQ1-responsive genes grouped by C13NJ, GSC316, and U87 samples">
+            </div>
+          </article>
+        </div>
+
+        <article class="callout" aria-labelledby="rnaseq-takeaway-title">
+          <h2 id="rnaseq-takeaway-title">RNA-seq Takeaway</h2>
+          <p>
+            The expression data show that JQ1 causes a strong transcriptional response after accounting for cell-line identity.
+            The most useful integration step is to intersect genes downregulated after JQ1 with genes near BRD4 peaks lost after JQ1,
+            prioritizing candidate direct BRD4/JQ1-sensitive targets.
+          </p>
+        </article>
+      </div>
+    </section>
+
     <section id="figures" class="tab-panel" data-tab-panel="figures" aria-labelledby="figures-title" hidden>
       <div class="section-heading">
         <h2 id="figures-title">Figure Highlights</h2>
@@ -1108,7 +1334,7 @@
             <p>Baseline BRD4 peak count does not simply explain proportional JQ1 loss.</p>
           </div>
           <div class="figure">
-            <img src="results/phase8_final_interpretation/baseline_vs_jq1_sensitivity/baseline_vs_jq1_sensitivity_scatter.svg?v=20260526b" alt="Scatter plot comparing untreated BRD4 peak burden to JQ1 percent loss">
+            <img src="results/phase8_final_interpretation/baseline_vs_jq1_sensitivity/baseline_vs_jq1_sensitivity_scatter.svg?v=20260619b" alt="Labeled scatter plot comparing untreated BRD4 peak burden to JQ1 percent loss">
           </div>
         </article>
         <article class="panel">
