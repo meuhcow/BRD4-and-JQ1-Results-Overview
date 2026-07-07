@@ -1240,7 +1240,7 @@
               </ul>
             </div>
             <div class="figure">
-              <img src="webpage_assets/rnaseq/pretty_pca.png" alt="PCA plot of variance-stabilized RNA expression samples colored by treatment and shaped by cell line">
+              <img src="webpage_assets/rnaseq/pretty_pca.png?v=20260702" alt="PCA plot of variance-stabilized RNA expression samples colored by treatment and shaped by cell line">
             </div>
           </article>
 
@@ -1293,12 +1293,150 @@
           </article>
         </div>
 
+        <div class="rna-summary">
+          <article class="panel">
+            <div class="panel-body">
+              <h3>Gene Ontology enrichment: what was tested</h3>
+              <p>
+                After DESeq2 identified genes that changed after JQ1 treatment, Gene Ontology enrichment asked whether those genes were concentrated in known biological categories more than expected by chance.
+                The background was all genes tested by DESeq2, so the enrichment is compared against the same expression dataset rather than the whole genome.
+              </p>
+              <div class="tag-row">
+                <span class="tag">752 JQ1-down genes</span>
+                <span class="tag">210 JQ1-up genes</span>
+                <span class="tag">FDR &lt; 0.05 and |log2FC| &gt;= 1</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-body">
+              <h3>Main GO result</h3>
+              <p>
+                The downregulated genes produced many more enriched GO terms than the upregulated genes.
+                This means the strongest functional signal is not just that individual genes go down, but that whole receptor, signaling, membrane, angiogenesis, and ion-channel programs are reduced after JQ1.
+              </p>
+              <div class="tag-row">
+                <span class="tag">60 enriched down-gene terms</span>
+                <span class="tag">1 enriched up-gene term</span>
+                <span class="tag">clusterProfiler enrichGO</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rna-figure-grid">
+          <article class="rna-figure-card">
+            <div class="rna-explanation">
+              <h3>GO dotplot: genes downregulated after JQ1</h3>
+              <p>This plot shows the strongest Gene Ontology categories enriched among genes whose expression decreased after JQ1.</p>
+              <ul>
+                <li>Each dot is one GO term.</li>
+                <li>The x-axis is gene ratio: the fraction of downregulated genes belonging to that GO term.</li>
+                <li>Larger dots contain more downregulated genes.</li>
+                <li>Warmer colors have stronger statistical support after multiple-testing correction.</li>
+                <li>BP means biological process, CC means cellular component, and MF means molecular function.</li>
+              </ul>
+              <p>
+                The strongest pattern is loss of transmembrane receptor, GPCR, peptide receptor, ion-channel, MAPK/inflammatory, angiogenesis, and membrane-associated gene programs.
+                This fits the idea that JQ1 suppresses BRD4-supported signaling and cell-state programs.
+              </p>
+            </div>
+            <div class="figure">
+              <img src="webpage_assets/rnaseq/go_dotplot_jq1_down.png?v=20260707" alt="GO enrichment dotplot for genes downregulated after JQ1">
+            </div>
+          </article>
+
+          <article class="rna-figure-card">
+            <div class="rna-explanation">
+              <h3>GO dotplot: genes upregulated after JQ1</h3>
+              <p>This plot shows the GO categories enriched among genes whose expression increased after JQ1.</p>
+              <ul>
+                <li>Only one GO term passed the enrichment threshold for the upregulated genes.</li>
+                <li>The enriched term is cyclin-dependent protein serine/threonine kinase inhibitor activity.</li>
+                <li>The contributing genes are HEXIM2, CDKN1A, and CDKN2B.</li>
+                <li>This suggests a smaller induced program related to cell-cycle restraint or stress response.</li>
+              </ul>
+            </div>
+            <div class="figure">
+              <img src="webpage_assets/rnaseq/go_dotplot_jq1_up.png?v=20260707" alt="GO enrichment dotplot for genes upregulated after JQ1">
+            </div>
+          </article>
+        </div>
+
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Top enriched GO terms</h3>
+            <p>
+              The table summarizes representative enriched terms from the GO analysis.
+              The downregulated genes have the broad functional signal, while the upregulated set has one focused kinase-inhibitor term.
+            </p>
+          </div>
+          <div class="table-wrap">
+            <table class="mini-table">
+              <thead>
+                <tr>
+                  <th>Gene set</th>
+                  <th>GO category</th>
+                  <th>Top term</th>
+                  <th>Genes</th>
+                  <th>FDR</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>JQ1 down</td>
+                  <td>MF</td>
+                  <td>Transmembrane signaling receptor activity</td>
+                  <td>43</td>
+                  <td>8.54e-7</td>
+                </tr>
+                <tr>
+                  <td>JQ1 down</td>
+                  <td>MF</td>
+                  <td>G protein-coupled receptor activity</td>
+                  <td>22</td>
+                  <td>3.98e-5</td>
+                </tr>
+                <tr>
+                  <td>JQ1 down</td>
+                  <td>MF</td>
+                  <td>Deaminase activity</td>
+                  <td>8</td>
+                  <td>9.95e-5</td>
+                </tr>
+                <tr>
+                  <td>JQ1 down</td>
+                  <td>CC</td>
+                  <td>Postsynaptic membrane</td>
+                  <td>26</td>
+                  <td>2.57e-4</td>
+                </tr>
+                <tr>
+                  <td>JQ1 down</td>
+                  <td>BP</td>
+                  <td>Sprouting angiogenesis</td>
+                  <td>19</td>
+                  <td>7.04e-4</td>
+                </tr>
+                <tr>
+                  <td>JQ1 up</td>
+                  <td>MF</td>
+                  <td>Cyclin-dependent protein serine/threonine kinase inhibitor activity</td>
+                  <td>3</td>
+                  <td>0.0232</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
         <article class="callout" aria-labelledby="rnaseq-takeaway-title">
           <h2 id="rnaseq-takeaway-title">RNA-seq Takeaway</h2>
           <p>
             The expression data show that JQ1 causes a strong transcriptional response after accounting for cell-line identity.
-            The most useful integration step is to intersect genes downregulated after JQ1 with genes near BRD4 peaks lost after JQ1,
-            prioritizing candidate direct BRD4/JQ1-sensitive targets.
+            DESeq2 shows that many more genes go down than up, and GO enrichment shows that the downregulated genes concentrate in signaling, receptor, membrane, angiogenesis, and ion-channel programs.
+            The most useful integration step is to intersect these downregulated genes with genes near BRD4 peaks lost after JQ1, prioritizing candidate direct BRD4/JQ1-sensitive targets.
           </p>
         </article>
       </div>
@@ -1503,6 +1641,7 @@
   </script>
 </body>
 </html>
+
 
 
 
