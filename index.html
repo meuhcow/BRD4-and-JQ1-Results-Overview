@@ -1441,6 +1441,321 @@
           </div>
         </article>
 
+        <div class="rna-summary">
+          <article class="panel">
+            <div class="panel-body">
+              <h3>Expanded cell-line comparison</h3>
+              <p>
+                DESeq2 was also run separately for each cell line, then the significant genes were compared with UpSet plots.
+                The strict comparison uses only datasets with raw count-like input and biological replicates, so 7 cell lines were included in the final UpSet.
+                Three planned additions were excluded from strict DESeq2 because the available files were normalized expression tables or lacked replicates.
+              </p>
+              <div class="tag-row">
+                <span class="tag">10 cell lines planned</span>
+                <span class="tag">7 valid for strict DESeq2</span>
+                <span class="tag">FDR &lt; 0.05 and |log2FC| &gt;= 1</span>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="mini-table">
+                <thead>
+                  <tr>
+                    <th>Cell line</th>
+                    <th>Dataset</th>
+                    <th>Up</th>
+                    <th>Down</th>
+                    <th>Used in UpSet?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>C13NJ</td><td>GSE178471</td><td>38</td><td>54</td><td>Yes</td></tr>
+                  <tr><td>GSC316</td><td>GSE178471</td><td>547</td><td>1,402</td><td>Yes</td></tr>
+                  <tr><td>U87</td><td>GSE178471</td><td>37</td><td>122</td><td>Yes</td></tr>
+                  <tr><td>MDA-MB-231</td><td>GSE115550</td><td>324</td><td>690</td><td>Yes</td></tr>
+                  <tr><td>HCT116</td><td>GSE270887</td><td>790</td><td>1,469</td><td>Yes</td></tr>
+                  <tr><td>Raji</td><td>GSE92456</td><td>1,196</td><td>1,755</td><td>Yes</td></tr>
+                  <tr><td>NB4</td><td>GSE232294</td><td>1,658</td><td>1,958</td><td>Yes</td></tr>
+                  <tr><td>MDA-MB-231 validation</td><td>GSE236250</td><td>1,464</td><td>2,300</td><td>No, duplicate cell line</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-body">
+              <h3>Why not all 10?</h3>
+              <p>
+                The goal was a 10-cell-line UpSet, but DESeq2 should be run on raw counts with replicates.
+                MOLM-13, PC3, and OVCAR3 had too few replicate samples for the direct JQ1 contrast, while GIST-T1, MCF7, and MOLT4 had normalized expression files rather than raw counts.
+                They can be used for exploratory ranked analyses, but were kept out of the strict DESeq2 UpSet.
+              </p>
+              <div class="tag-row">
+                <span class="tag">No overclaiming</span>
+                <span class="tag">Raw counts prioritized</span>
+                <span class="tag">Replicates required</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="rna-figure-grid">
+          <article class="rna-figure-card">
+            <div class="rna-explanation">
+              <h3>UpSet: genes upregulated after JQ1</h3>
+              <p>
+                Each column is an overlap pattern. The black dots show which cell lines share that gene set, and the bar above shows how many genes are in that exact intersection.
+              </p>
+              <ul>
+                <li>Two genes were upregulated in all 7 strict DESeq2 cell lines: DCXR and DHRS2.</li>
+                <li>Most upregulated intersections are smaller, meaning many induced responses are cell-line-specific or shared by subsets.</li>
+                <li>The MDA-MB-231 validation dataset was analyzed separately but not counted as another cell line.</li>
+              </ul>
+            </div>
+            <div class="figure">
+              <img src="webpage_assets/rnaseq/strict_deseq2_upset_up.png?v=20260715" alt="UpSet plot showing genes upregulated after JQ1 across seven strict DESeq2 cell lines">
+            </div>
+          </article>
+
+          <article class="rna-figure-card">
+            <div class="rna-explanation">
+              <h3>UpSet: genes downregulated after JQ1</h3>
+              <p>
+                This plot uses the same logic, but for genes whose expression decreased after JQ1 in each separately analyzed cell line.
+              </p>
+              <ul>
+                <li>No gene was downregulated in all 7 strict DESeq2 cell lines.</li>
+                <li>The strongest shared downregulated patterns occur across subsets of 5 or 6 cell lines.</li>
+                <li>This suggests that JQ1 repression is broad, but the exact vulnerable expression program depends on cell-line context.</li>
+              </ul>
+            </div>
+            <div class="figure">
+              <img src="webpage_assets/rnaseq/strict_deseq2_upset_down.png?v=20260715" alt="UpSet plot showing genes downregulated after JQ1 across seven strict DESeq2 cell lines">
+            </div>
+          </article>
+        </div>
+
+        <article class="panel">
+          <div class="panel-body">
+            <h3>U87 and GSC316 shared JQ1 response</h3>
+            <p>
+              U87 and GSC316 are the two glioblastoma-related models in the expanded comparison.
+              Genes listed here are significant in both U87 and GSC316 after JQ1 treatment.
+              Some are also shared with other cell lines; the exact-only rows show genes found only in the U87/GSC316 UpSet intersection.
+            </p>
+          </div>
+          <div class="table-wrap">
+            <table class="mini-table">
+              <thead>
+                <tr>
+                  <th>Direction</th>
+                  <th>Shared genes</th>
+                  <th>Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Up in both</td>
+                  <td>CATG00000019706.1, PEG10, AP001816.1, DHRS2, LRP4-AS1, CATG00000005860.1, AC074363.1, TM7SF2, DCXR</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>Down in both</td>
+                  <td>NCKAP5, NUPR1, NECAB2, HKDC1, FGF1, ALDH1A3, LRRK1, TENM2, NDUFA4L2, FAM171A1, MIR3189, GDF15, PYCR1, C8orf4, HOXC4</td>
+                  <td>15</td>
+                </tr>
+                <tr>
+                  <td>Exact-only up</td>
+                  <td>AC074363.1, AP001816.1, CATG00000005860.1, CATG00000019706.1</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Exact-only down</td>
+                  <td>C8orf4, MIR3189, NDUFA4L2, NECAB2, TENM2</td>
+                  <td>5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-body">
+            <h3>U87/GSC316 gene implication</h3>
+            <p>
+              GO enrichment did not find significant biological-process terms for the U87/GSC316 overlap, most likely because the shared gene sets are small.
+              The gene-level pattern is still informative: the shared downregulated genes include stress-adaptation, metabolism, growth-factor, mitochondrial, and developmental/regulatory genes.
+            </p>
+          </div>
+          <div class="table-wrap">
+            <table class="mini-table">
+              <thead>
+                <tr>
+                  <th>Theme</th>
+                  <th>Genes</th>
+                  <th>Interpretation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Stress and adaptive response</td>
+                  <td>NUPR1, GDF15</td>
+                  <td>These genes often mark cellular stress or survival adaptation; their decrease suggests reduced stress-adaptive transcription after JQ1.</td>
+                </tr>
+                <tr>
+                  <td>Metabolism and redox state</td>
+                  <td>HKDC1, ALDH1A3, PYCR1, NDUFA4L2, DCXR, DHRS2</td>
+                  <td>Shared metabolic genes point to altered glucose, aldehyde/redox, proline, and mitochondrial-associated programs.</td>
+                </tr>
+                <tr>
+                  <td>Growth and cell-state regulation</td>
+                  <td>FGF1, TENM2, HOXC4, PEG10</td>
+                  <td>These genes connect to growth-factor signaling, developmental identity, or cell-state programs that may be BRD4/JQ1-sensitive in GBM models.</td>
+                </tr>
+                <tr>
+                  <td>U87/GSC316-specific repression</td>
+                  <td>C8orf4, MIR3189, NDUFA4L2, NECAB2, TENM2</td>
+                  <td>These exact-only downregulated genes may be useful GBM-focused candidates because they appear in U87 and GSC316 but not the other strict DESeq2 cell lines.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="rna-summary">
+          <article class="panel">
+            <div class="panel-body">
+              <h3>GSEA: shared JQ1-vulnerable programs</h3>
+              <p>
+                The top JQ1-vulnerable genes were converted into a preranked GSEA input file.
+                Genes most consistently downregulated across the strict DESeq2 cell lines were placed at the top of the ranked list, so positive NES values indicate pathways enriched among shared JQ1-repressed genes.
+              </p>
+              <div class="tag-row">
+                <span class="tag">GSEA Preranked</span>
+                <span class="tag">Hallmark v2026.1</span>
+                <span class="tag">No_Collapse</span>
+                <span class="tag">1,000 permutations</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-body">
+              <h3>GSEA interpretation</h3>
+              <p>
+                The strongest Hallmark signal was MYC targets, followed by cell-cycle, inflammatory/interferon, KRAS, TNFA/NF-kB, and mTORC1-related programs.
+                These are biologically plausible for BRD4/JQ1 because BRD4 inhibition often affects transcriptional addiction, proliferation, and signaling programs.
+                The enrichment is exploratory: no Hallmark pathway passed FDR &lt; 0.05, but several were within the common exploratory GSEA range of FDR &lt; 0.25.
+              </p>
+              <div class="tag-row">
+                <span class="tag">0 terms at FDR &lt; 0.05</span>
+                <span class="tag">18 terms at FDR &lt; 0.25</span>
+                <span class="tag">Positive NES = JQ1 vulnerable</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <article class="panel">
+          <div class="panel-body">
+            <h3>Top Hallmark GSEA results</h3>
+            <p>
+              Positive NES means the pathway is concentrated near the top of the JQ1-vulnerability ranking.
+              The ranking used here prioritizes genes downregulated across multiple cell lines, so these results emphasize conserved JQ1-sensitive programs rather than one cell line alone.
+            </p>
+          </div>
+          <div class="table-wrap">
+            <table class="mini-table">
+              <thead>
+                <tr>
+                  <th>Hallmark pathway</th>
+                  <th>NES</th>
+                  <th>FDR q-val</th>
+                  <th>Interpretation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>MYC targets V2</td>
+                  <td>1.10</td>
+                  <td>0.150</td>
+                  <td>Most supported shared JQ1-vulnerable program; consistent with BRD4/MYC transcriptional dependence.</td>
+                </tr>
+                <tr>
+                  <td>E2F targets</td>
+                  <td>1.05</td>
+                  <td>0.174</td>
+                  <td>Cell-cycle and proliferation genes are enriched among genes repressed by JQ1.</td>
+                </tr>
+                <tr>
+                  <td>KRAS signaling up</td>
+                  <td>1.05</td>
+                  <td>0.156</td>
+                  <td>Growth and signaling programs appear vulnerable in the shared ranking.</td>
+                </tr>
+                <tr>
+                  <td>TNFA signaling via NF-kB</td>
+                  <td>1.04</td>
+                  <td>0.170</td>
+                  <td>Inflammatory and transcriptional response genes contribute to the JQ1-sensitive signal.</td>
+                </tr>
+                <tr>
+                  <td>mTORC1 signaling</td>
+                  <td>1.04</td>
+                  <td>0.157</td>
+                  <td>Metabolic and growth-control genes are modestly enriched among vulnerable genes.</td>
+                </tr>
+                <tr>
+                  <td>Interferon alpha/gamma response</td>
+                  <td>1.05</td>
+                  <td>0.196-0.216</td>
+                  <td>Immune/stress response programs show exploratory enrichment.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="rna-figure-grid">
+          <article class="rna-figure-card">
+            <div class="rna-explanation">
+              <h3>GSEA enrichment curve: MYC targets V2</h3>
+              <p>
+                This is the strongest Hallmark result.
+                The enrichment peak occurs near the top of the ranked list, meaning MYC target genes are concentrated among genes most consistently repressed after JQ1.
+              </p>
+            </div>
+            <div class="figure">
+              <img src="webpage_assets/rnaseq/gsea_hallmark_myc_targets_v2.png?v=20260715" alt="GSEA enrichment plot for Hallmark MYC targets V2 in the JQ1 vulnerability ranking">
+            </div>
+          </article>
+
+          <article class="rna-figure-card">
+            <div class="rna-explanation">
+              <h3>GSEA enrichment curve: E2F targets</h3>
+              <p>
+                E2F target enrichment supports a modest shared cell-cycle/proliferation signal among JQ1-vulnerable genes.
+                This fits the broader DESeq2 result showing JQ1 repression of transcriptional growth programs.
+              </p>
+            </div>
+            <div class="figure">
+              <img src="webpage_assets/rnaseq/gsea_hallmark_e2f_targets.png?v=20260715" alt="GSEA enrichment plot for Hallmark E2F targets in the JQ1 vulnerability ranking">
+            </div>
+          </article>
+        </div>
+
+        <article class="rna-figure-card">
+          <div class="rna-explanation">
+            <h3>GSEA significance summary</h3>
+            <p>
+              The NES versus p-value summary shows that the Hallmark signals are modest rather than definitive.
+              This is why the result is best presented as pathway-level support for candidate JQ1-sensitive programs, not as a strongly significant pathway discovery claim.
+            </p>
+          </div>
+          <div class="figure">
+            <img src="webpage_assets/rnaseq/gsea_hallmark_pvalues_vs_nes.png?v=20260715" alt="GSEA p-values versus normalized enrichment scores for Hallmark pathways">
+          </div>
+        </article>
+
         <article class="callout" aria-labelledby="rnaseq-takeaway-title">
           <h2 id="rnaseq-takeaway-title">RNA-seq Takeaway</h2>
           <p>
